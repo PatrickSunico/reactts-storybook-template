@@ -31,34 +31,6 @@ export const MinWidth: Story = {
   },
 };
 
-// export const FullWidth: Story = {
-//   render: () => (
-//     <Container>
-//       <Button variant="btn-primary">Click</Button>
-//     </Container>
-//   ),
-// };
-
-// export const Base: Story = {
-//   args: {},
-// };
-
-// const Template: StoryObj<ContainerProps> = (args) => <Container {...args}> </Container>
-
-// export const FullWidth = () => {
-
-//   return (
-//     <Container>
-//       <Button
-//         variant="primary"
-//         className="btn-primary"
-//       >
-//         Click
-//       </Button>
-//     </Container>
-//   );
-// };
-
 // export const Default = () => <Button variant="primary" className="btn-primary"> Click </Button>
 
 // export const Secondary = () => <Button variant="secondary" className="btn-secondary"> Click </Button>
