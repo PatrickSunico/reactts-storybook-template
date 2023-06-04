@@ -6,7 +6,7 @@ import { Button } from "../Button/Button";
 
 // Meta Data for displaying a component inside storybook
 const meta: Meta<typeof Container> = {
-  title: "Container",
+  title: "Atoms/Container",
   component: Container,
 };
 
@@ -20,7 +20,11 @@ export const FullWidth: Story = {
   args: {
     className: "dark",
     color: "white",
-    children: <Button variant="btn-primary"> Click </Button>,
+    children: (
+      <>
+        <Button variant="btn-primary"> Click </Button>
+      </>
+    ),
   },
 };
 
