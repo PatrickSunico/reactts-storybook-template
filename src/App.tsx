@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import "antd/dist/reset.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+// Ant Design
+import { Layout, ConfigProvider } from "antd";
 
+// Atoms
+import { MainParent, Container } from "./components/atoms/atomIndex";
+import { TableComponent } from "./components/organisms/organismIndex";
+
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Layout>
+      <MainParent className="h-full overflow-y-auto">
+        <Container className="container grid px-6 mx-auto">
+          <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            Close Active CFS
+          </h2>
 
-export default App
+          <Container className="w-full overflow-hidden rounded-lg shadow-xs">
+            <TableComponent />
+          </Container>
+        </Container>
+      </MainParent>
+    </Layout>
+  );
+};
+
+export default App;
