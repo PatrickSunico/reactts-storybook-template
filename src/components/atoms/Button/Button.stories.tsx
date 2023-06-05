@@ -4,7 +4,7 @@ import { Button } from "./Button";
 
 // Master Component with default values
 const meta: Meta<typeof Button> = {
-  title: "Atomsf/Button",
+  title: "Atoms/Button",
   args: {
     children: "Click",
   },
@@ -26,6 +26,29 @@ export const Secondary: Story = {
   args: {
     variant: "btn-secondary",
   },
+};
+
+export const Tertiary: Story = {
+  args: {
+    variant: "btn-tertiary",
+  },
+};
+
+export const GroupedButtons: Story = {
+  // render() - to Render as JSX
+  render: (args) => (
+    <div className="flex flex-col px-2 py-2">
+      <Button variant="btn-primary" className="my-2 me-2">
+        Primary
+      </Button>
+      <Button variant="btn-secondary" className="my-2 me-2">
+        Secondary
+      </Button>
+      <Button variant="btn-tertiary" className="my-2 me-2">
+        Tertiary
+      </Button>
+    </div>
+  ),
 };
 
 // const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;

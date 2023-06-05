@@ -2,8 +2,8 @@ import { HTMLAttributes, ReactNode } from "react";
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  classNames?: string;
-  variant: "btn-primary" | "btn-secondary";
+  className?: string;
+  variant: "btn-primary" | "btn-secondary" | "btn-tertiary";
   backgroundColor?: string;
   onClick?: () => void;
 }
@@ -11,11 +11,12 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 export const Button = ({
   children,
   variant,
-  classNames,
+  className,
   backgroundColor,
   ...props
 }: ButtonProps) => {
-  const styles = `${variant} ${classNames}`;
+  console.log(className);
+  const styles = `${variant} ${className}`;
   return (
     <button {...props} className={styles} style={{ backgroundColor }}>
       {children}
