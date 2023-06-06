@@ -4,6 +4,7 @@ import "antd/dist/reset.css";
 // Atoms
 import { MainParent, Container, Button } from "./components/atoms/atomIndex";
 import { TableOrganism } from "./components/organisms/organismIndex";
+import { TablePage } from "./components/pages/TablePage/TablePage";
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
         </Container>
 
         <Container className="w-full overflow-hidden rounded-lg shadow-xs">
-          <TableOrganism />
+          <TablePage type="pendingCFS" />
+          {/* <TableOrganism /> */}
         </Container>
       </Container>
     </MainParent>
