@@ -36,7 +36,7 @@ export const Tertiary: Story = {
 
 export const GroupedButtons: Story = {
   // render() - to Render as JSX
-  render: (args) => (
+  render: () => (
     <div className="flex flex-col px-2 py-2">
       <Button variant="btn-primary" className="my-2 me-2">
         Primary

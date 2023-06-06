@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Space, Table, Popconfirm } from "antd";
+import { Table } from "antd";
 import { Button } from "../../atoms/atomIndex";
 
-const { Column, ColumnGroup } = Table;
+const { Column } = Table;
+
+import "./TableOrganism.css";
 
 export interface TableProps {
   key: React.Key;
@@ -29,37 +31,39 @@ const data: TableProps[] = [
   },
 ];
 
-export const TableComponent = () => {
-  //   const [dataSource, setDataSource] = useState<TableProps[]>(data);
-  const [dataSource, setDataSource] = useState(data);
+export const TableOrganism = () => {
+  const [dataSource, setDataSource] = useState<TableProps[]>(data);
 
   const handleDelete = (key: React.Key): void => {
     const newData = dataSource.filter((item) => item.key !== key);
     setDataSource(newData);
-    // console.log(e.target.value);
   };
 
-  //   render: (text, record) => (
-  //     <Button onClick={() => handleDelete(r ecord)}>Delete</Button>
-  //   ),
+  // colorizedRow
+  const colorizedRow = (_: unknown, index: number) => {
+    return index % 2 === 0 ? "table-row-odd" : "table-row-even";
+  };
 
   return (
-    <Table dataSource={data} pagination={false}>
+    <Table
+      dataSource={dataSource}
+      pagination={false}
+      rowClassName={colorizedRow}
+    >
       <Column title="#" dataIndex="id" />
       <Column title="CFSResponderId" dataIndex="CFSResponderId" />
       <Column
         title="Action"
         dataIndex="key"
-        render={(_, record: { key: React.Key }) =>
+        render={(_: unknown, record: { key: React.Key }) =>
           data.length >= 1 ? (
-            <Popconfirm
-              title="Are you sure you want to delete"
-              onConfirm={() => handleDelete(record.key)}
+            <Button
+              variant="btn-danger"
+              className="mx-2 my-2"
+              onClick={() => handleDelete(record.key)}
             >
-              <Button variant="btn-danger" className="mx-2 my-2">
-                Delete
-              </Button>
-            </Popconfirm>
+              Delete
+            </Button>
           ) : null
         }
       />

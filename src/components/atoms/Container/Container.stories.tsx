@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Container, ContainerProps } from "./Container";
+import { Container } from "./Container";
 
 import "./Container.css";
 import { Button } from "../Button/Button";
 
 // Meta Data for displaying a component inside storybook
 const meta: Meta<typeof Container> = {
-  title: "Atoms/Container",
+  title: "Atoms/Container/Container",
   component: Container,
 };
 
@@ -34,7 +34,3 @@ export const MinWidth: Story = {
     color: "white",
   },
 };
-
-// export const Default = () => <Button variant="primary" className="btn-primary"> Click </Button>
-
-// export const Secondary = () => <Button variant="secondary" className="btn-secondary"> Click </Button>
