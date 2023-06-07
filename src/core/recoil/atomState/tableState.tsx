@@ -1,7 +1,7 @@
 import { atom } from "recoil";
-import { TableProps } from "../../../components/organisms/TableOrganism/TableOrganism";
+import { TableDataProps } from "../../../components/organisms/TableOrganism/TableOrganism";
 
-export const tableStateAtom = atom<TableProps[]>({
+export const tableStateAtom = atom<TableDataProps[]>({
   key: "tableStateAtom",
   default: [],
 });

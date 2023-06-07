@@ -1,6 +1,6 @@
 // import authHeader from "../core/auth/authHeader";
 import { formatDataToObject } from "../utils/dataMapper";
-import { TableProps } from "../../components/organisms/TableOrganism/TableOrganism";
+import { TableDataProps } from "../../components/organisms/TableOrganism/TableOrganism";
 
 import instance from "../../core/services/axios";
 
@@ -13,7 +13,7 @@ export interface serviceType {
 export const getAllData = async (type: "pendingCFS" | "activeCFS") => {
   const response = await instance.get(`${API_URL}${type}`);
   const result: [] = response.data;
-  const formattedArray: TableProps[] = formatDataToObject(result);
+  const formattedArray: TableDataProps[] = formatDataToObject(result);
   return formattedArray;
 };
 

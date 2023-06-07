@@ -1,22 +1,28 @@
 import React from "react";
 import { Table } from "antd";
-import { Button } from "../../atoms/atomIndex";
 
-const { Column } = Table;
+import { TableColumn } from "../../molecules/TableColumn/TableColumn";
+import { Button } from "../../atoms/atomIndex";
 
 import "./TableOrganism.css";
 
-export interface TableProps {
+export interface TableDataProps {
   key: number;
   id: number;
   CFSResponderId: number;
+  dataSource: {
+    data: [];
+  };
 }
 
 type Props = {
-  dataSource: TableProps[];
+  dataSource: {
+    data: TableDataProps[];
+  };
 };
 
 export const TableOrganism = ({ dataSource: { data } }: Props) => {
+  console.log(data);
   const handleDelete = (key: React.Key) => {
     // Handle Delete
   };
@@ -27,24 +33,33 @@ export const TableOrganism = ({ dataSource: { data } }: Props) => {
   };
 
   return (
-    <Table dataSource={data} pagination={false} rowClassName={colorizedRow}>
-      <Column title="#" dataIndex="id" />
-      <Column title="CFSResponderId" dataIndex="CFSResponderId" />
-      <Column
-        title="Action"
-        dataIndex="key"
-        render={(_: unknown, record: { key: React.Key }) =>
-          data.length >= 1 ? (
-            <Button
-              variant="btn-danger"
-              className="mx-2 my-2"
-              onClick={() => handleDelete(record.key)}
-            >
-              Delete
-            </Button>
-          ) : null
-        }
-      />
-    </Table>
+    data && (
+      <Table dataSource={data}>
+        {/* {data.map((item) => (
+          // <TableColumn dataIndex={item.id} />
+        ))} */}
+      </Table>
+    )
+
+    // <Table dataSource={data}></Table>
+    // <Table dataSource={data} pagination={false} rowClassName={colorizedRow}>
+    //   <Column title="#" dataIndex="id" />
+    //   <Column title="CFSResponderId" dataIndex="CFSResponderId" />
+    //   <Column
+    //     title="Action"
+    //     dataIndex="key"
+    //     render={(_: unknown, record: { key: React.Key }) =>
+    //       data.length >= 1 ? (
+    //         <Button
+    //           variant="btn-danger"
+    //           className="mx-2 my-2"
+    //           onClick={() => handleDelete(record.key)}
+    //         >
+    //           Delete
+    //         </Button>
+    //       ) : null
+    //     }
+    //   />
+    // </Table>
   );
 };

@@ -3,7 +3,7 @@ import "antd/dist/reset.css";
 
 // Atoms
 import { MainParent, Container, Button } from "./components/atoms/atomIndex";
-import { TableOrganism } from "./components/organisms/organismIndex";
+// import { TableOrganism } from "./components/organisms/organismIndex";
 import { TablePage } from "./components/pages/TablePage/TablePage";
 
 const App = () => {
