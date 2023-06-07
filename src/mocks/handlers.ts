@@ -12,4 +12,5 @@ const getActiveCFS = rest.get("/NJM/rest/cfs/getActiveCFS", (_, res, ctx) => {
   return res(ctx.json(activeCFS));
 });
 
+// const handleCFSOperation = rest.get(`/NJM/rest/cfs/${operation}/?respId=${id}`)
 export const handlers = [getPendingCFS, getActiveCFS];

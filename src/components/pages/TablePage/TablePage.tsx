@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import DataService from "../../../core/services/data.service";
-import { activeCFS } from "../../../core/recoil/atomState/activeCFS";
-import { pendingCFS } from "../../../core/recoil/atomState/pendingCFS";
 import { tableStateAtom } from "../../../core/recoil/atomState/tableState";
 import { TableOrganism } from "../../organisms/organismIndex";
+
+import { formatDataToObject } from "../../../core/utils/dataMapper";
 
 export interface TableProps {
   key: React.Key;
@@ -20,49 +20,36 @@ export interface serviceMethod {
   type: "closeCFS" | "rejectCFS";
 }
 
-// const fetchPosts = async (type: 'notice' | 'freeboard' | 'discuss') => {
-//   const res = await fetch(`http://localhost:4000/${type}`);
-//   return await res.json();
-// };
-
-// const fetchData = async (type: "pendingCFS" | "activeCFS") => {
-//   // const res = await fetch(`http://localhost:4000/${type}`);
-//   // return await res.json();
-// };
-
-// const fetchData = DataService.getAllPosts(type: 'pendingCFS'| type: 'activeCFS');
-
-// const fetchData = DataService.getAllPosts(type: 'pendingCFS' | type: 'activeCFS');
-
-// Sample Data
-// const closedCFSData: TableProps[] = [
-//   {
-//     key: 1,
-//     id: 1,
-//     CFSResponderId: 26919889,
-//   },
-//   {
-//     key: 2,
-//     id: 2,
-//     CFSResponderId: 26919889,
-//   },
-//   {
-//     key: 3,
-//     id: 3,
-//     CFSResponderId: 26919889,
-//   },
-// ];
-
 export const TablePage = ({ type }: serviceType) => {
   const [defaultTable, setDefaultTable] = useRecoilState(tableStateAtom);
+
+  // const fetchData = async (type: serviceType) => {
+  //   try {
+  //     const response = await DataService.getAllData(type);
+  //     // const formattedArray = formatDataToObject(response.data);
+
+  //     // Set Data Table
+  //     setDefaultTable((prevState) => ({
+  //       ...prevState,
+  //       data: response,
+  //     }));
+
+  //     return response;
+  //   } catch (error) {
+  //     console.error("Error fetching todos:", error);
+  //   }
+  // };
 
   useEffect(() => {
     const fetchData = async (type: string) => {
       try {
         const response = await DataService.getAllData(type);
+        // const formattedArray = formatDataToObject(response.data);
+
+        // Set Data Table
         setDefaultTable((prevState) => ({
           ...prevState,
-          cfs: response.data,
+          data: response,
         }));
       } catch (error) {
         console.error("Error fetching todos:", error);
@@ -72,16 +59,8 @@ export const TablePage = ({ type }: serviceType) => {
     fetchData(type);
   }, [type, setDefaultTable]);
 
-  console.log(defaultTable);
-  // const [dataSource, setDataSource] = useRecoilState(type);
-
-  // const getData = async (type) => {
-  //   const result = await DataService.getAllPosts(type);
-  // };
-
-  // const result = getData(type);
-  // console.log(result);
-  return <TableOrganism />;
+  // Render Skeleton on Load
+  return <TableOrganism dataSource={defaultTable} />;
 
   // const fetchData = (type: "pendingCFS" | type: "activeCFS") => {
   //   // DataService.getAllPosts(type);

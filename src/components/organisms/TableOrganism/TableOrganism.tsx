@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Table } from "antd";
 import { Button } from "../../atoms/atomIndex";
 
@@ -7,36 +7,18 @@ const { Column } = Table;
 import "./TableOrganism.css";
 
 export interface TableProps {
-  key: React.Key;
+  key: number;
   id: number;
   CFSResponderId: number;
 }
 
-// Sample Data
-const data: TableProps[] = [
-  {
-    key: 1,
-    id: 1,
-    CFSResponderId: 26919889,
-  },
-  {
-    key: 2,
-    id: 2,
-    CFSResponderId: 26919889,
-  },
-  {
-    key: 3,
-    id: 3,
-    CFSResponderId: 26919889,
-  },
-];
+type Props = {
+  dataSource: TableProps[];
+};
 
-export const TableOrganism = () => {
-  const [dataSource, setDataSource] = useState<TableProps[]>(data);
-
-  const handleDelete = (key: React.Key): void => {
-    const newData = dataSource.filter((item) => item.key !== key);
-    setDataSource(newData);
+export const TableOrganism = ({ dataSource: { data } }: Props) => {
+  const handleDelete = (key: React.Key) => {
+    // Handle Delete
   };
 
   // colorizedRow
@@ -45,11 +27,7 @@ export const TableOrganism = () => {
   };
 
   return (
-    <Table
-      dataSource={dataSource}
-      pagination={false}
-      rowClassName={colorizedRow}
-    >
+    <Table dataSource={data} pagination={false} rowClassName={colorizedRow}>
       <Column title="#" dataIndex="id" />
       <Column title="CFSResponderId" dataIndex="CFSResponderId" />
       <Column

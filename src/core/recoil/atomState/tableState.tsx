@@ -1,17 +1,7 @@
 import { atom } from "recoil";
+import { TableProps } from "../../../components/organisms/TableOrganism/TableOrganism";
 
-interface TableState {
-  CFSResponderId: number;
-  index: number;
-}
-
-interface CFSState {
-  cfs: TableState[]; // Type that is a union
-}
-
-export const tableStateAtom = atom<CFSState>({
+export const tableStateAtom = atom<TableProps[]>({
   key: "tableStateAtom",
-  default: {
-    cfs: [],
-  },
+  default: [],
 });
