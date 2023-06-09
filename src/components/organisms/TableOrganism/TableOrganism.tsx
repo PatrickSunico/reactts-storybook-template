@@ -5,25 +5,28 @@ const { Column } = Table;
 import { TableColumn } from "../../molecules/TableColumn/TableColumn";
 import { Button } from "../../atoms/atomIndex";
 
-import "./TableOrganism.css";
+// Recoil
+import {
+  TableDataProps,
+  TableColumnProps,
+} from "../../../core/recoil/atomState/tableState";
 
-export interface TableDataProps {
-  key: number;
-  id: number;
-  CFSResponderId: number;
-  dataSource: {
-    data: [];
-  };
-}
+import "./TableOrganism.css";
 
 type Props = {
   dataSource: {
     data: TableDataProps[];
   };
+  columns: TableColumnProps[];
 };
 
-export const TableOrganism = ({ dataSource: { data } }: Props) => {
-  console.log(data);
+// dataSource: Props,
+// columns: TableColumnProps[],
+
+export const TableOrganism = ({ dataSource, columns }: Props) => {
+  console.log(dataSource.data);
+  // const { data } = dataSource;
+  // console.log(dataSource);
   const handleDelete = (key: React.Key) => {
     // Handle Delete
   };
@@ -34,15 +37,19 @@ export const TableOrganism = ({ dataSource: { data } }: Props) => {
   };
 
   return (
-    data && (
-      <Table dataSource={data}>
-        <Column title="#" dataIndex="id" />
+    dataSource && (
+      <Table
+        dataSource={dataSource.data}
+        rowClassName={colorizedRow}
+        columns={columns}
+      >
+        {/* <Column title="#" dataIndex="id" />
         <Column title="CFSResponderId" dataIndex="CFSResponderId" />
         <Column
           title="Action"
           dataIndex="key"
           render={(_: unknown, record: { key: React.Key }) =>
-            data.length >= 1 ? (
+            dataSource.data.length >= 1 ? (
               <Button
                 variant="btn-danger"
                 className="mx-2 my-2"
@@ -52,29 +59,8 @@ export const TableOrganism = ({ dataSource: { data } }: Props) => {
               </Button>
             ) : null
           }
-        />
+        /> */}
       </Table>
     )
-
-    // <Table dataSource={data}></Table>
-    // <Table dataSource={data} pagination={false} rowClassName={colorizedRow}>
-    // <Column title="#" dataIndex="id" />
-    // <Column title="CFSResponderId" dataIndex="CFSResponderId" />
-    // <Column
-    //   title="Action"
-    //   dataIndex="key"
-    //   render={(_: unknown, record: { key: React.Key }) =>
-    //     data.length >= 1 ? (
-    //       <Button
-    //         variant="btn-danger"
-    //         className="mx-2 my-2"
-    //         onClick={() => handleDelete(record.key)}
-    //       >
-    //         Delete
-    //       </Button>
-    //     ) : null
-    //   }
-    // />
-    // </Table>
   );
 };
