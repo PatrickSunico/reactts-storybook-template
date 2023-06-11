@@ -20,14 +20,9 @@ type Props = {
 
 export const TableOrganism = ({ dataSource, columns }: Props) => {
   const { data } = dataSource;
-  console.log(data);
-  const handleDelete = (CFSResponderId: number, key: React.Key) => {
+  const markAsDone = (CFSResponderId: number, key: React.Key) => {
     console.log(CFSResponderId);
     console.log(key);
-    // const newData = dataSource.filter((item) => item.key !== key);
-    // console.log(newData);
-    // setDataSource(newData);
-    // Handle Delete
   };
 
   // colorizedRow
@@ -41,7 +36,13 @@ export const TableOrganism = ({ dataSource, columns }: Props) => {
     <Table dataSource={data} rowClassName={colorizedRow} pagination={false}>
       <Column title="#" dataIndex="id" />
       <Column title="CFSResponderId" dataIndex="CFSResponderId" />
-      <Column title="Status" dataIndex="status" />
+      <Column
+        title="Status"
+        dataIndex="status"
+        render={(_: unknown, record: { status: boolean; key: React.Key }) => (
+          <>{status ? "Done" : "Not Done"}</>
+        )}
+      />
       <Column
         title="Action"
         dataIndex="key"
@@ -51,9 +52,9 @@ export const TableOrganism = ({ dataSource, columns }: Props) => {
         ) =>
           data.length >= 1 ? (
             <Button
-              variant="btn-primary"
+              variant="btn-accept"
               className="mx-2 my-2"
-              onClick={() => handleDelete(record.CFSResponderId, record.key)}
+              onClick={() => markAsDone(record.CFSResponderId, record.key)}
             >
               Mark as Done
             </Button>

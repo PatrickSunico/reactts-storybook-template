@@ -1,4 +1,5 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
 import { Table } from "antd";
 const { Column } = Table;
 import { Button } from "../../atoms/atomIndex";
@@ -8,18 +9,10 @@ import { Button } from "../../atoms/atomIndex";
 import {
   TableColumnProps,
   TableDataProps,
+  tableColumnAtomState,
 } from "../../../core/recoil/atomState/tableState";
 
 import "./TableColumn.css";
-
-// interface ColumnType {
-//   title: string;
-//   dataIndex: number;
-// }
-
-// interface TableColumnProps {
-//   columns: ColumnType[];
-// }
 
 interface Props {
   data: TableDataProps[];
@@ -27,9 +20,8 @@ interface Props {
 }
 
 export const TableColumn = () => {
-  const handleDelete = (key: React.Key) => {
-    // Handle Delete
-  };
+  const tableColumns = useRecoilValue(tableColumnAtomState);
+  // const handleDelete = (key: React.Key) => {};
 
   return (
     <></>

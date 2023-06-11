@@ -13,7 +13,7 @@ export const tableColumnAtomState = atom<TableColumnProps[]>({
   default: [
     { title: "Id", dataIndex: "id", key: "id" },
     { title: "CFSResponderId", dataIndex: "CFSResponderId", key: "id" },
-    { title: "Status", dataIndex: "status", key: "id" },
+    { title: "status", dataIndex: "status", key: "id" },
     { title: "Action", dataIndex: "Action", key: "id" },
   ],
 });
@@ -24,12 +24,7 @@ export interface TableDataProps {
   CFSResponderId: number;
   status: boolean;
   key: number;
-  delete: (_: unknown, record: { key: React.Key }) => void;
 }
-
-// export interface TableDataArrayProps {
-
-// }
 
 export const tableAtomState = atom<TableDataProps[]>({
   key: "tableAtomState",
