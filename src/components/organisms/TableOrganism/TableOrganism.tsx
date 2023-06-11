@@ -14,18 +14,19 @@ import {
 import "./TableOrganism.css";
 
 type Props = {
-  dataSource: {
-    data: TableDataProps[];
-  };
-
+  dataSource: TableDataProps[];
   columns: TableColumnProps[];
 };
 
-// dataSource: Props,
-// columns: TableColumnProps[],
-
-export const TableOrganism = ({ dataSource: { data }, columns }: Props) => {
-  const handleDelete = (key: React.Key) => {
+export const TableOrganism = ({ dataSource, columns }: Props) => {
+  const { data } = dataSource;
+  console.log(data);
+  const handleDelete = (CFSResponderId: number, key: React.Key) => {
+    console.log(CFSResponderId);
+    console.log(key);
+    // const newData = dataSource.filter((item) => item.key !== key);
+    // console.log(newData);
+    // setDataSource(newData);
     // Handle Delete
   };
 
@@ -37,27 +38,28 @@ export const TableOrganism = ({ dataSource: { data }, columns }: Props) => {
   };
 
   return (
-    data && (
-      <Table dataSource={data} rowClassName={colorizedRow}>
-        <TableColumn columns={columns} />
-        {/* <Column title="#" dataIndex="id" />
-        <Column title="CFSResponderId" dataIndex="CFSResponderId" />
-        <Column
-          title="Action"
-          dataIndex="key"
-          render={(_: unknown, record: { key: React.Key }) =>
-            dataSource.data.length >= 1 ? (
-              <Button
-                variant="btn-danger"
-                className="mx-2 my-2"
-                onClick={() => handleDelete(record.key)}
-              >
-                Delete
-              </Button>
-            ) : null
-          }
-        /> */}
-      </Table>
-    )
+    <Table dataSource={data} rowClassName={colorizedRow} pagination={false}>
+      <Column title="#" dataIndex="id" />
+      <Column title="CFSResponderId" dataIndex="CFSResponderId" />
+      <Column title="Status" dataIndex="status" />
+      <Column
+        title="Action"
+        dataIndex="key"
+        render={(
+          _: unknown,
+          record: { CFSResponderId: number; key: React.Key },
+        ) =>
+          data.length >= 1 ? (
+            <Button
+              variant="btn-primary"
+              className="mx-2 my-2"
+              onClick={() => handleDelete(record.CFSResponderId, record.key)}
+            >
+              Mark as Done
+            </Button>
+          ) : null
+        }
+      />
+    </Table>
   );
 };

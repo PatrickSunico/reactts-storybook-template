@@ -18,7 +18,7 @@ const App = () => {
         </Container>
 
         <Container className="w-full overflow-hidden rounded-lg shadow-xs">
-          <TablePage type="pendingCFS" />
+          <TablePage cfsType="pendingCFS" />
           {/* <TablePage type="activeCFS" /> */}
 
           {/* <TableOrganism /> */}

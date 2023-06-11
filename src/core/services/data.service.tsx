@@ -6,12 +6,8 @@ import instance from "../../core/services/axios";
 
 const API_URL = "/NJM/rest/cfs/";
 
-export interface serviceType {
-  type: "pendingCFS" | "activeCFS";
-}
-
-export const getAllData = async (type: "pendingCFS" | "activeCFS") => {
-  const response = await instance.get(`${API_URL}${type}`);
+export const getAllData = async (cfsType: string) => {
+  const response = await instance.get(`${API_URL}${cfsType}`);
   const result: [] = response.data;
   const formattedArray: TableDataProps[] = formatDataToObject(result);
   return formattedArray;

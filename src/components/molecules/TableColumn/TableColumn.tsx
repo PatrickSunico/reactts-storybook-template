@@ -1,9 +1,14 @@
 import React from "react";
 import { Table } from "antd";
 const { Column } = Table;
+import { Button } from "../../atoms/atomIndex";
+// import { Button } from "../../atoms/atomIndex";
 
 // Recoil
-import { TableColumnProps } from "../../../core/recoil/atomState/tableState";
+import {
+  TableColumnProps,
+  TableDataProps,
+} from "../../../core/recoil/atomState/tableState";
 
 import "./TableColumn.css";
 
@@ -16,8 +21,16 @@ import "./TableColumn.css";
 //   columns: ColumnType[];
 // }
 
-export const TableColumn = (columns: TableColumnProps[]) => {
-  console.log(columns);
+interface Props {
+  data: TableDataProps[];
+  columns: TableColumnProps[];
+}
+
+export const TableColumn = () => {
+  const handleDelete = (key: React.Key) => {
+    // Handle Delete
+  };
+
   return (
     <></>
     // <>
@@ -26,6 +39,17 @@ export const TableColumn = (columns: TableColumnProps[]) => {
     //       key={column.dataIndex}
     //       title={column.title}
     //       dataIndex={column.dataIndex}
+    //       render={(_: unknown, record: { key: React.Key }) =>
+    //         data.length >= 1 ? (
+    //           <Button
+    //             variant="btn-danger"
+    //             className="mx-2 my-2"
+    //             onClick={() => handleDelete(record.key)}
+    //           >
+    //             Delete
+    //           </Button>
+    //         ) : null
+    //       }
     //     />
     //   ))}
     // </>

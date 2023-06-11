@@ -8,19 +8,21 @@ import {
   tableColumnAtomState,
 } from "../../../core/recoil/atomState/tableState";
 
-export interface serviceType {
-  type: "pendingCFS" | "activeCFS";
-}
+type serviceType = {
+  cfsType: string;
+};
 
-export const TablePage = ({ type }: serviceType) => {
-  const [data, setData] = useRecoilState(tableAtomState);
+export const TablePage = (cfsType: serviceType) => {
+  const [dataSource, setDataSource] = useRecoilState(tableAtomState);
   const tableColumns = useRecoilValue(tableColumnAtomState);
 
   useEffect(() => {
-    const fetchData = async (type: string) => {
+    const fetchData = async ({ cfsType }: serviceType) => {
+      console.log(cfsType);
       try {
-        const response = await DataService.getAllData(type);
-        setData((prevState) => ({
+        const response = await DataService.getAllData(cfsType);
+        // setDataSource(response);
+        setDataSource((prevState) => ({
           ...prevState,
           data: response,
         }));
@@ -28,10 +30,10 @@ export const TablePage = ({ type }: serviceType) => {
         console.error("Error fetching todos:", error);
       }
     };
-    fetchData(type);
-  }, [type, setData]);
+    fetchData(cfsType);
+  }, [cfsType, setDataSource]);
 
   // console.log(defaultTable);
 
-  return <TableOrganism dataSource={data} columns={tableColumns} />;
+  return <TableOrganism dataSource={dataSource} columns={tableColumns} />;
 };
