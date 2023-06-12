@@ -1,56 +1,112 @@
-import React, { useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { useEffect } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 import DataService from "../../../core/services/data.service";
-import { tableStateAtom } from "../../../core/recoil/atomState/tableState";
 import { TableOrganism } from "../../organisms/organismIndex";
 
-import { formatDataToObject } from "../../../core/utils/dataMapper";
+// Recoil
+import {
+  tableAtomState,
+  tableColumnAtomState,
+} from "../../../core/recoil/atomState/tableState";
 
-export interface TableProps {
-  key: React.Key;
-  id: number;
-  CFSResponderId: number;
-}
+import { Button } from "../../atoms/atomIndex";
 
-export interface serviceType {
-  type: "pendingCFS" | "activeCFS";
-}
+// Types
+import { ServiceType } from "../../../types/Table/TableTypes";
+import { TableDataProps } from "../../../types/Table/TableTypes";
 
-export interface serviceMethod {
-  type: "closeCFS" | "rejectCFS";
-}
-
-export const columns = [
-  { title: "id", dataIndex: "id" },
-  { title: "CFSResponderId", dataIndex: "CFSResponderId" },
-  { title: "Action", dataIndex: "Action" },
-];
-
-export const TablePage = ({ type }: serviceType) => {
-  const [defaultTable, setDefaultTable] = useRecoilState(tableStateAtom);
+export const TablePage = (cfsType: ServiceType) => {
+  const [dataSource, setDataSource] = useRecoilState(tableAtomState);
+  const tableColumns = useRecoilValue(tableColumnAtomState);
 
   useEffect(() => {
-    const fetchData = async (type: string) => {
+    const fetchData = async ({ cfsType }: ServiceType) => {
       try {
-        const response = await DataService.getAllData(type);
-        // const formattedArray = formatDataToObject(response.data);
-        setDefaultTable((prevState) => ({
-          ...prevState,
-          data: response,
-        }));
+        const response = await DataService.getAllData(cfsType);
+        setDataSource({ data: response });
       } catch (error) {
         console.error("Error fetching todos:", error);
       }
     };
 
-    fetchData(type);
-  }, [type, setDefaultTable]);
+    fetchData(cfsType);
+  }, [cfsType, setDataSource]);
 
-  return <TableOrganism dataSource={defaultTable} columns={columns} />;
+  // Passed functions
+  const colorizedRow = (_: unknown, index: number) => {
+    return index % 2 === 0
+      ? "table-row-odd no-hover"
+      : "table-row-even no-hover";
+  };
 
-  // const fetchData = (type: "pendingCFS" | type: "activeCFS") => {
-  //   // DataService.getAllPosts(type);
-  // }
-  // const [dataSource, setDataSource] = useRecoilState()
-  // const [dataSource, setDataSource] = useState<TableProps[]>(closedCFSData);
+  const renderStatus = (status: boolean): JSX.Element => {
+    return <>{status ? "Done" : "In Progress"}</>;
+  };
+
+  const renderStatusButton = (id: number, rowProp: TableDataProps) => {
+    return dataSource?.data.length ?? 0 >= 1 ? (
+      <Button
+        variant="btn-accept"
+        className="mx-2 my-2"
+        onClick={() => markAsDone(id, rowProp.CFSResponderId)}
+      >
+        Mark as Done
+      </Button>
+    ) : (
+      <></>
+    );
+  };
+
+  const renderDeleteButton = (id: number, rowProp: TableDataProps) => {
+    return dataSource?.data.length ?? 0 >= 1 ? (
+      <Button
+        variant="btn-danger"
+        className="mx-2 my-2"
+        onClick={() => closeCFS(id, rowProp.CFSResponderId)}
+      >
+        Close CFS
+      </Button>
+    ) : (
+      <></>
+    );
+  };
+
+  // Sort
+  const renderSort = (a: TableDataProps, b: TableDataProps) => {
+    return a.id - b.id;
+    // return a[key] - b[key];
+  };
+
+  // Filter
+  // const filter = () => {};
+
+  // Internal Methods
+  const markAsDone = (key: React.Key, CFSResponderId: number) => {
+    setDataSource((prevDataSource) => ({
+      ...(prevDataSource as { data: TableDataProps[] }),
+      data: (prevDataSource as { data: TableDataProps[] }).data.map((row) =>
+        row.CFSResponderId === CFSResponderId ? { ...row, status: true } : row,
+      ),
+    }));
+  };
+
+  const closeCFS = (key: React.Key, CFSResponderId: number) => {
+    setDataSource((prevDataSource) => ({
+      ...(prevDataSource as { data: TableDataProps[] }),
+      data: (prevDataSource as { data: TableDataProps[] }).data.filter(
+        (row) => row.CFSResponderId !== CFSResponderId,
+      ),
+    }));
+  };
+
+  return (
+    <TableOrganism
+      dataSource={dataSource}
+      columns={tableColumns}
+      renderSort={renderSort}
+      colorizedRow={colorizedRow}
+      renderStatus={renderStatus}
+      renderActionButton={renderDeleteButton}
+    />
+  );
 };

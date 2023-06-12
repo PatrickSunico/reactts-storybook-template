@@ -1,80 +1,51 @@
-import React from "react";
 import { Table } from "antd";
 const { Column } = Table;
 
-import { TableColumn } from "../../molecules/TableColumn/TableColumn";
-import { Button } from "../../atoms/atomIndex";
+// Recoil
+import {
+  TableDataProps,
+  TableColumnProps,
+  DataSource,
+} from "../../../types/Table/TableTypes";
 
 import "./TableOrganism.css";
 
-export interface TableDataProps {
-  key: number;
-  id: number;
-  CFSResponderId: number;
-  dataSource: {
-    data: [];
-  };
+export interface Props {
+  dataSource?: DataSource<TableDataProps>;
+  columns: TableColumnProps[];
+  renderSort: (a: TableDataProps, b: TableDataProps) => number;
+  colorizedRow: (_: unknown, index: number) => string;
+  renderStatus: (status: boolean) => JSX.Element;
+  renderActionButton: (id: number, rowProp: TableDataProps) => JSX.Element;
 }
 
-type Props = {
-  dataSource: {
-    data: TableDataProps[];
-  };
-};
-
-export const TableOrganism = ({ dataSource: { data } }: Props) => {
-  console.log(data);
-  const handleDelete = (key: React.Key) => {
-    // Handle Delete
-  };
-
-  // colorizedRow
-  const colorizedRow = (_: unknown, index: number) => {
-    return index % 2 === 0 ? "table-row-odd" : "table-row-even";
-  };
+export const TableOrganism = ({
+  dataSource,
+  columns,
+  renderSort,
+  renderStatus,
+  colorizedRow,
+  renderActionButton,
+}: Props) => {
+  // const handleSort = (a: any, b: any) => {
+  //   // Implement your sorting logic here
+  //   return a.id - b.id;
+  // };
 
   return (
-    data && (
-      <Table dataSource={data}>
-        <Column title="#" dataIndex="id" />
-        <Column title="CFSResponderId" dataIndex="CFSResponderId" />
-        <Column
-          title="Action"
-          dataIndex="key"
-          render={(_: unknown, record: { key: React.Key }) =>
-            data.length >= 1 ? (
-              <Button
-                variant="btn-danger"
-                className="mx-2 my-2"
-                onClick={() => handleDelete(record.key)}
-              >
-                Delete
-              </Button>
-            ) : null
-          }
-        />
-      </Table>
-    )
-
-    // <Table dataSource={data}></Table>
-    // <Table dataSource={data} pagination={false} rowClassName={colorizedRow}>
-    // <Column title="#" dataIndex="id" />
-    // <Column title="CFSResponderId" dataIndex="CFSResponderId" />
-    // <Column
-    //   title="Action"
-    //   dataIndex="key"
-    //   render={(_: unknown, record: { key: React.Key }) =>
-    //     data.length >= 1 ? (
-    //       <Button
-    //         variant="btn-danger"
-    //         className="mx-2 my-2"
-    //         onClick={() => handleDelete(record.key)}
-    //       >
-    //         Delete
-    //       </Button>
-    //     ) : null
-    //   }
-    // />
-    // </Table>
+    <Table
+      dataSource={dataSource?.data}
+      rowClassName={colorizedRow}
+      pagination={false}
+    >
+      <Column
+        title="#"
+        dataIndex="id"
+        sorter={(a: TableDataProps, b: TableDataProps) => renderSort(a, b)}
+      />
+      <Column title="CFSResponderId" dataIndex="CFSResponderId" />
+      <Column title="Status" dataIndex="status" render={renderStatus} />
+      <Column title="Action" dataIndex="key" render={renderActionButton} />
+    </Table>
   );
 };
