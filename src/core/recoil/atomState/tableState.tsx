@@ -1,12 +1,10 @@
 import React from "react";
 import { atom } from "recoil";
-
-// Table Columns Type
-export interface TableColumnProps {
-  title: string;
-  dataIndex: string;
-  key: React.Key;
-}
+import { DataSource } from "../../../types/Table/TableTypes";
+import {
+  TableDataProps,
+  TableColumnProps,
+} from "../../../types/Table/TableTypes";
 
 export const tableColumnAtomState = atom<TableColumnProps[]>({
   key: "tableColumnAtomState",
@@ -18,15 +16,7 @@ export const tableColumnAtomState = atom<TableColumnProps[]>({
   ],
 });
 
-// Table Data Type
-export interface TableDataProps {
-  id: number;
-  CFSResponderId: number;
-  status: boolean;
-  key: number;
-}
-
-export const tableAtomState = atom<TableDataProps[]>({
+export const tableAtomState = atom<DataSource<TableDataProps> | undefined>({
   key: "tableAtomState",
-  default: [],
+  default: undefined,
 });

@@ -1,66 +1,51 @@
-import React from "react";
 import { Table } from "antd";
 const { Column } = Table;
-
-import { TableColumn } from "../../molecules/TableColumn/TableColumn";
-import { Button } from "../../atoms/atomIndex";
 
 // Recoil
 import {
   TableDataProps,
   TableColumnProps,
-} from "../../../core/recoil/atomState/tableState";
+  DataSource,
+} from "../../../types/Table/TableTypes";
 
 import "./TableOrganism.css";
 
-type Props = {
-  dataSource: TableDataProps[];
+export interface Props {
+  dataSource?: DataSource<TableDataProps>;
   columns: TableColumnProps[];
-};
+  renderSort: (a: TableDataProps, b: TableDataProps) => number;
+  colorizedRow: (_: unknown, index: number) => string;
+  renderStatus: (status: boolean) => JSX.Element;
+  renderActionButton: (id: number, rowProp: TableDataProps) => JSX.Element;
+}
 
-export const TableOrganism = ({ dataSource, columns }: Props) => {
-  const { data } = dataSource;
-  const markAsDone = (CFSResponderId: number, key: React.Key) => {
-    console.log(CFSResponderId);
-    console.log(key);
-  };
-
-  // colorizedRow
-  const colorizedRow = (_: unknown, index: number) => {
-    return index % 2 === 0
-      ? "table-row-odd no-hover"
-      : "table-row-even no-hover";
-  };
+export const TableOrganism = ({
+  dataSource,
+  columns,
+  renderSort,
+  renderStatus,
+  colorizedRow,
+  renderActionButton,
+}: Props) => {
+  // const handleSort = (a: any, b: any) => {
+  //   // Implement your sorting logic here
+  //   return a.id - b.id;
+  // };
 
   return (
-    <Table dataSource={data} rowClassName={colorizedRow} pagination={false}>
-      <Column title="#" dataIndex="id" />
+    <Table
+      dataSource={dataSource?.data}
+      rowClassName={colorizedRow}
+      pagination={false}
+    >
+      <Column
+        title="#"
+        dataIndex="id"
+        sorter={(a: TableDataProps, b: TableDataProps) => renderSort(a, b)}
+      />
       <Column title="CFSResponderId" dataIndex="CFSResponderId" />
-      <Column
-        title="Status"
-        dataIndex="status"
-        render={(_: unknown, record: { status: boolean; key: React.Key }) => (
-          <>{status ? "Done" : "Not Done"}</>
-        )}
-      />
-      <Column
-        title="Action"
-        dataIndex="key"
-        render={(
-          _: unknown,
-          record: { CFSResponderId: number; key: React.Key },
-        ) =>
-          data.length >= 1 ? (
-            <Button
-              variant="btn-accept"
-              className="mx-2 my-2"
-              onClick={() => markAsDone(record.CFSResponderId, record.key)}
-            >
-              Mark as Done
-            </Button>
-          ) : null
-        }
-      />
+      <Column title="Status" dataIndex="status" render={renderStatus} />
+      <Column title="Action" dataIndex="key" render={renderActionButton} />
     </Table>
   );
 };
