@@ -5,6 +5,12 @@ import "antd/dist/reset.css";
 import { MainParent, Container, Button } from "./components/atoms/atomIndex";
 // import { TableOrganism } from "./components/organisms/organismIndex";
 import { TablePage } from "./components/pages/TablePage/TablePage";
+// import POCTable from "./components/pages/POCTable/POCTable";
+import POCTable from "./components/pages/POCTable/POCTable";
+import FilterTable from "./components/pages/FilterByDate/FilterByDate";
+import SkeletonTable from "./components/pages/POCTable/SkeletonTable";
+import SearchPOCTable from "./components/pages/POCTable/SearchPOCTable";
+import RenderPOCTable from "./components/pages/POCTable/RenderPOCTable";
 
 const App = () => {
   return (
@@ -18,7 +24,13 @@ const App = () => {
         </Container>
 
         <Container className="w-full overflow-hidden rounded-lg shadow-xs">
-          <TablePage type="pendingCFS" />
+          <TablePage cfsType="pendingCFS" />
+          {/* <RenderPOCTable /> */}
+          {/* <SkeletonTable /> */}
+          {/* <SearchPOCTable /> */}
+          {/* <POCTable /> */}
+          {/* <FilterTable /> */}
+
           {/* <TablePage type="activeCFS" /> */}
 
           {/* <TableOrganism /> */}

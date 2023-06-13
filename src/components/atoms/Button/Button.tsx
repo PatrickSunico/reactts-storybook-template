@@ -4,7 +4,12 @@ import "./Button.css";
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
-  variant: "btn-primary" | "btn-secondary" | "btn-tertiary" | "btn-danger";
+  variant:
+    | "btn-primary"
+    | "btn-secondary"
+    | "btn-tertiary"
+    | "btn-danger"
+    | "btn-accept";
   backgroundColor?: string;
   onClick?: () => void;
 }

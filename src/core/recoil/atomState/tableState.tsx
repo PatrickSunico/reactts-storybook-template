@@ -1,29 +1,55 @@
 import { atom } from "recoil";
+import { Tag } from "antd";
 
-// Table Columns Type
-export interface TableColumnProps {
-  title: string;
-  dataIndex: string;
-}
+import { DataSource } from "../../../types/Table/TableTypes";
+import {
+  TableDataProps,
+  TableColumnProps,
+} from "../../../types/Table/TableTypes";
 
-export const tableColumnAtomState = atom<TableColumnProps[]>({
+import type { ColumnType, ColumnsType } from "antd/es/table";
+
+const columns: ColumnsType<TableDataProps> = [
+  {
+    title: "Id",
+    dataIndex: "id",
+    key: "id",
+  },
+  {
+    title: "CFSResponderId",
+    dataIndex: "CFSResponderId",
+    key: "id",
+  },
+  {
+    title: "Departments",
+    dataIndex: "departments",
+    key: "id",
+    render: (_, { departments }) => (
+      <>
+        {departments.map((department) => {
+          let color = departments.length > 5 ? "geekblue" : "green";
+          if (department === "loser") {
+            color = "volcano";
+          }
+          return (
+            <Tag color={color} key={department}>
+              {department.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </>
+    ),
+  },
+  { title: "Status", dataIndex: "status", key: "id" },
+  { title: "Action", dataIndex: "Action", key: "id" },
+];
+
+export const tableColumnAtomState = atom<ColumnsType<TableColumnProps>>({
   key: "tableColumnAtomState",
-  default: [
-    { title: "id", dataIndex: "id" },
-    { title: "CFSResponderId", dataIndex: "CFSResponderId" },
-    { title: "Action", dataIndex: "Action" },
-  ],
+  default: columns,
 });
 
-// Table Data Type
-export interface TableDataProps {
-  key: number;
-  id: number;
-  CFSResponderId: number;
-  data: [];
-}
-
-export const tableAtomState = atom<TableDataProps[]>({
+export const tableAtomState = atom<DataSource<TableDataProps> | undefined>({
   key: "tableAtomState",
-  default: [],
+  default: undefined,
 });
