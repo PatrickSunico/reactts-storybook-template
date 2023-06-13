@@ -8,14 +8,14 @@ export interface TableDataProps {
   id: number;
   CFSResponderId: number;
   status: boolean;
-  key: number;
+  key: string;
 }
 
 // Table Columns Type
 export interface TableColumnProps {
   title: string;
   dataIndex: string;
-  key: React.Key;
+  key: string;
 }
 
 // Datasource Prop Destructured

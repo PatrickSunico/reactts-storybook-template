@@ -1,4 +1,4 @@
-import { Table } from "antd";
+import { Table, Skeleton } from "antd";
 const { Column } = Table;
 
 // Recoil
@@ -17,6 +17,7 @@ export interface Props {
   colorizedRow: (_: unknown, index: number) => string;
   renderStatus: (status: boolean) => JSX.Element;
   renderActionButton: (id: number, rowProp: TableDataProps) => JSX.Element;
+  loading: boolean;
 }
 
 export const TableOrganism = ({
@@ -26,12 +27,8 @@ export const TableOrganism = ({
   renderStatus,
   colorizedRow,
   renderActionButton,
+  loading,
 }: Props) => {
-  // const handleSort = (a: any, b: any) => {
-  //   // Implement your sorting logic here
-  //   return a.id - b.id;
-  // };
-
   return (
     <Table
       dataSource={dataSource?.data}
