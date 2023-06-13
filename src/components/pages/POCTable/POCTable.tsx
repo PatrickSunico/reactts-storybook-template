@@ -52,7 +52,7 @@ const columns: Column[] = [
 const POCTable = () => {
   const [searchText, setSearchText] = useState("");
 
-  const [columns, setColumns] = useState([]);
+  const [columnMethod, setColumnMethod] = useState([]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);

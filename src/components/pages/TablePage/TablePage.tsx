@@ -17,16 +17,32 @@ import { TableDataProps } from "../../../types/Table/TableTypes";
 
 // Ant Design
 import { SearchOutlined } from "@ant-design/icons";
-import type { InputRef, Input } from "antd";
+import type { InputRef } from "antd";
+import { Input, Space } from "antd";
 import type { ColumnType, ColumnsType } from "antd/es/table";
 import type { FilterConfirmProps } from "antd/es/table/interface";
 import Highlighter from "react-highlight-words";
+
+export interface FilterMethods {
+  setSelectedKeys: (e: React.Key[]) => void;
+  selectedKeys: React.Key[];
+  confirm: () => void;
+  clearFilters: () => void;
+  dataIndex: string;
+  columnName: string;
+}
+
+export interface Record {
+  key: string;
+  columnName: string;
+  [key: string]: string; //index signature
+}
 
 export const TablePage = (cfsType: ServiceType) => {
   // Main Atom State
   const [dataSource, setDataSource] = useRecoilState(tableAtomState);
   // Column Atom
-  const [tableColumns, setTableColumns] = useRecoilState(tableColumnAtomState);
+  const tableColumns = useRecoilValue(tableColumnAtomState);
 
   // Skeleton Loader
   const [skeletonLoading, setSkeletonLoading] = useState(true);
@@ -45,93 +61,110 @@ export const TablePage = (cfsType: ServiceType) => {
   }, [cfsType, setDataSource]);
 
   // Search Method
-  // const [searchText, setSearchText] = useState("");
-  // const [searchedColumn, setSearchedColumn] = useState<string>("");
-  // const searchInput = useRef<InputRef>(null);
+  const [searchText, setSearchText] = useState("");
+  const [searchedColumn, setSearchedColumn] = useState<string>("");
 
-  // type DataIndex = keyof TableDataProps;
+  const handleSearch = (
+    selectedKeys: React.Key[],
+    confirm: () => void,
+    dataIndex: string,
+  ) => {
+    confirm();
+    setSearchText(selectedKeys[0] as string);
+    setSearchedColumn(dataIndex);
+  };
 
-  // const handleSearch = (
-  //   selectedKeys: string[],
-  //   confirm: (param?: FilterConfirmProps) => void,
-  //   dataIndex: DataIndex,
-  // ) => {
-  //   confirm();
-  //   setSearchText(selectedKeys[0]);
-  //   setSearchedColumn(dataIndex);
-  // };
+  const handleReset = (clearFilters: () => void) => {
+    clearFilters();
+    setSearchText("");
+    setSearchedColumn("");
+  };
 
-  // const handleReset = (clearFilters: () => void) => {
-  //   clearFilters();
-  //   setSearchText("");
-  // };
+  // Passed Methods to Table Organism Columns
+  const filterDropDown = ({
+    setSelectedKeys,
+    selectedKeys,
+    confirm,
+    clearFilters,
+    dataIndex,
+    columnName,
+  }: FilterMethods) => (
+    <div className="px-8 py-8">
+      <Input
+        placeholder={`Search ${columnName}`}
+        value={selectedKeys[0]}
+        onChange={(e) =>
+          setSelectedKeys(e.target.value ? [e.target.value] : [])
+        }
+        onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+        style={{ width: 188, marginBottom: 8, display: "block" }}
+      />
 
-  // const [searchText, setSearchText] = useState<string>("");
-  // const [searchedColumn, setSearchedColumn] = useState<string>("");
+      <Space>
+        <Button
+          variant="btn-primary"
+          onClick={() =>
+            handleSearch(selectedKeys as string[], confirm, dataIndex)
+          }
+        >
+          Search
+        </Button>
+        <Button
+          onClick={() => clearFilters && handleReset(clearFilters)}
+          variant="btn-primary"
+        >
+          Reset
+        </Button>
+        <Button
+          variant="btn-primary"
+          onClick={() => {
+            confirm({ closeDropdown: false });
+            setSearchText((selectedKeys as string[])[0]);
+            setSearchedColumn(dataIndex);
+          }}
+        >
+          Filter
+        </Button>
+        <Button
+          variant="btn-primary"
+          onClick={() => {
+            close();
+          }}
+        >
+          close
+        </Button>
+      </Space>
+    </div>
+  );
 
-  // const handleSearch = (
-  //   selectedKeys: React.Key[],
-  //   confirm: () => void,
-  //   dataIndex: string,
-  // ) => {
-  //   confirm();
-  //   setSearchText(selectedKeys[0] as string);
-  //   setSearchedColumn(dataIndex);
-  // };
+  const filterIcon = (filtered: boolean) => (
+    <div style={{ marginTop: 5 }}>
+      <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+    </div>
+  );
 
-  // const handleReset = (clearFilters: () => void) => {
-  //   clearFilters();
-  //   setSearchText("");
-  //   setSearchedColumn("");
-  // };
+  const onFilter = (value: string, record: Record, dataIndex: string) => {
+    return record[dataIndex]
+      .toString()
+      .toLowerCase()
+      .includes(value.toLowerCase());
+  };
 
-  // interface filterMethods {
-  //   setSelectedKeys: () => void;
-  //   selectedKeys: React.Key[];
-  //   confirm: () => void;
-  //   clearFilters: () => void;
-  // }
+  const filteredValue = (dataIndex: string) =>
+    searchedColumn === dataIndex ? [searchText] : null;
 
-  // const filterDropDown = ({
-  //   setSelectedKeys,
-  //   selectedKeys,
-  //   confirm,
-  //   clearFilters,
-  // }: filterMethods) => {
-  //   <div style={{ padding: 8 }}>
-  //     <Input
-  //       placeholder={`Search ${columnName}`}
-  //       value={selectedKeys[0]}
-  //       onChange={(e) =>
-  //         setSelectedKeys(e.target.value ? [e.target.value] : [])
-  //       }
-  //       onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
-  //       style={{ width: 188, marginBottom: 8, display: "block" }}
-  //     />
-  //     <Button
-  //       variant="btn-primary"
-  //       onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
-  //       size="small"
-  //       style={{ width: 90, marginRight: 8 }}
-  //     >
-  //       Search
-  //     </Button>
-  //     <Button
-  //       variant="btn-primary"
-  //       onClick={() => handleReset(clearFilters)}
-  //       size="small"
-  //       style={{ width: 90 }}
-  //     >
-  //       Reset
-  //     </Button>
-  //   </div>;
-  // };
-
-  // const getColumnSearchProps = (dataIndex: string, columnName: string) => ({
-  //   filterDropdown: ({
-
-  //   })
-  // });
+  const onFilterDropdownOpenChange = (visible: boolean) => {
+    if (visible) {
+      setTimeout(() => {
+        const input = document.querySelector(
+          ".ant-table-filter-dropdown input",
+        ) as HTMLInputElement;
+        if (input) {
+          input.focus();
+        }
+      });
+    }
+  };
 
   // End Search Method
 
@@ -210,6 +243,11 @@ export const TablePage = (cfsType: ServiceType) => {
       colorizedRow={colorizedRow}
       renderStatus={renderStatus}
       renderActionButton={renderDeleteButton}
+      filterDropDown={filterDropDown}
+      filterIcon={filterIcon}
+      onFilter={onFilter}
+      filteredValue={filteredValue}
+      onFilterDropdownOpenChange={onFilterDropdownOpenChange}
     />
   );
 };

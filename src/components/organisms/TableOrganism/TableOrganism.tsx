@@ -10,24 +10,43 @@ import {
 
 import "./TableOrganism.css";
 
+import { FilterMethods, Record } from "../../pages/TablePage/TablePage";
+
 export interface Props {
   dataSource?: DataSource<TableDataProps>;
+  loading: boolean;
   columns: TableColumnProps[];
   renderSort: (a: TableDataProps, b: TableDataProps) => number;
   colorizedRow: (_: unknown, index: number) => string;
   renderStatus: (status: boolean) => JSX.Element;
   renderActionButton: (id: number, rowProp: TableDataProps) => JSX.Element;
-  loading: boolean;
+  filterDropDown: ({
+    setSelectedKeys,
+    selectedKeys,
+    confirm,
+    clearFilters,
+    dataIndex,
+    columnName,
+  }: FilterMethods) => JSX.Element;
+  filterIcon: (filtered: boolean) => JSX.Element;
+  onFilter: (value: string, record: Record, dataIndex: string) => boolean;
+  filteredValue: (dataIndex: string) => string[] | null;
+  onFilterDropdownOpenChange: (visible: boolean) => void;
 }
 
 export const TableOrganism = ({
   dataSource,
+  loading,
   columns,
   renderSort,
   renderStatus,
   colorizedRow,
   renderActionButton,
-  loading,
+  filterDropDown,
+  filterIcon,
+  onFilter,
+  filteredValue,
+  onFilterDropdownOpenChange,
 }: Props) => {
   return (
     <Table
