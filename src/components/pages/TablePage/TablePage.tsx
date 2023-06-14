@@ -13,7 +13,7 @@ import { Button } from "../../atoms/atomIndex";
 // Types
 import { ServiceType } from "../../../types/Table/TableTypes";
 import { TableDataProps } from "../../../types/Table/TableTypes";
-import { columnsState } from "../POCTable/SearchPOCTable";
+// import { columnsState } from "../POCTable/SearchPOCTable";
 
 export const TablePage = (cfsType: ServiceType) => {
   // Main Atom State
@@ -94,19 +94,6 @@ export const TablePage = (cfsType: ServiceType) => {
       ),
     }));
   };
-
-  const closeCFS = (key: React.Key, CFSResponderId: number) => {
-    setDataSource((prevDataSource) => ({
-      ...(prevDataSource as { data: TableDataProps[] }),
-      data: (prevDataSource as { data: TableDataProps[] }).data.filter(
-        (row) => row.CFSResponderId !== CFSResponderId,
-      ),
-    }));
-  };
-
-  // construct columnsConfig
-
-  const columnsConfig = columnsState.map;
 
   return (
     <TableOrganism

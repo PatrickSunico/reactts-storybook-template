@@ -1,6 +1,8 @@
 import { Table, Skeleton } from "antd";
 const { Column } = Table;
 
+import type { ColumnsType } from "antd/es/table";
+
 // Recoil
 import {
   TableDataProps,
@@ -11,7 +13,7 @@ import {
 export interface Props {
   dataSource?: DataSource<TableDataProps>;
   loading: boolean;
-  columns: TableColumnProps[];
+  columns: ColumnsType<TableColumnProps>;
   // renderSort: (a: TableDataProps, b: TableDataProps) => number;
   // colorizedRow: (_: unknown, index: number) => string;
   // renderStatus: (status: boolean) => JSX.Element;

@@ -5,6 +5,8 @@ export interface ServiceType {
 
 // Table Data Type
 export interface TableDataProps {
+  title: string;
+  dataIndex: string;
   key: string;
   id: number;
   CFSResponderId: number;
@@ -14,13 +16,19 @@ export interface TableDataProps {
 
 // Table Columns Type
 
-// dataSource?: DataSource<TableDataProps>;
-
 export interface TableColumnProps {
   title: string;
   dataIndex: string;
   key: string;
-  // render?: (_: unknown, record: { departments: [string] }) => JSX.Element;
+  id: number;
+  CFSResponderId: number;
+  status: boolean;
+  departments: [string];
+  render?: (
+    text: unknown | string,
+    record: object,
+    index: number,
+  ) => JSX.Element | void;
 }
 
 // Datasource Prop Destructured

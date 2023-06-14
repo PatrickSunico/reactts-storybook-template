@@ -7,9 +7,11 @@ import {
   TableColumnProps,
 } from "../../../types/Table/TableTypes";
 
-import type { ColumnType, ColumnsType } from "antd/es/table";
+import type { ColumnsType } from "antd/es/table";
 
-const columns: ColumnsType<TableDataProps> = [
+import { Button } from "../../../components/atoms/atomIndex";
+
+const columns: ColumnsType<TableColumnProps> = [
   {
     title: "Id",
     dataIndex: "id",
@@ -40,8 +42,23 @@ const columns: ColumnsType<TableDataProps> = [
       </>
     ),
   },
-  { title: "Status", dataIndex: "status", key: "id" },
-  { title: "Action", dataIndex: "Action", key: "id" },
+  {
+    title: "Status",
+    dataIndex: "status",
+    key: "id",
+    render: (_: unknown, { status }) => (status ? "Done" : "In Progress"),
+    // <Button variant="btn-danger" onClick={()=>}>Close CFS</Button>
+  },
+  {
+    title: "Action",
+    dataIndex: "Action",
+    key: "id",
+    render: (_: unknown, record, index) => (
+      <Button variant="btn-danger" onClick={() => closeCFS(record.id)}>
+        Close CFS
+      </Button>
+    ),
+  },
 ];
 
 export const tableColumnAtomState = atom<ColumnsType<TableColumnProps>>({
