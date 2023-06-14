@@ -9,7 +9,7 @@ export interface TableDataProps {
   id: number;
   CFSResponderId: number;
   status: boolean;
-  departments: [string];
+  departments: string[];
 }
 
 // Table Columns Type

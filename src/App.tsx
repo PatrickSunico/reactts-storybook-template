@@ -11,6 +11,7 @@ import FilterTable from "./components/pages/FilterByDate/FilterByDate";
 import SkeletonTable from "./components/pages/POCTable/SkeletonTable";
 import SearchPOCTable from "./components/pages/POCTable/SearchPOCTable";
 import RenderPOCTable from "./components/pages/POCTable/RenderPOCTable";
+import TableSorter from "./components/pages/SorterPOC/SorterTable";
 
 const App = () => {
   return (
@@ -24,7 +25,8 @@ const App = () => {
         </Container>
 
         <Container className="w-full overflow-hidden rounded-lg shadow-xs">
-          <TablePage cfsType="pendingCFS" />
+          <TableSorter cfsType="pendingCFS" />
+          {/* <TablePage cfsType="pendingCFS" /> */}
           {/* <RenderPOCTable /> */}
           {/* <SkeletonTable /> */}
           {/* <SearchPOCTable /> */}

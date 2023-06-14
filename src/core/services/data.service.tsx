@@ -13,7 +13,7 @@ export const getAllData = async (cfsType: string) => {
   return result;
 };
 
-const deleteData = (id: number) => {
+export const deleteData = (id: number) => {
   return instance.delete(API_URL + `${id}`);
 };
 

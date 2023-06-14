@@ -10,16 +10,54 @@ import {
 
 import { Button } from "../../atoms/atomIndex";
 
+import { Tag } from "antd";
+
 // Types
-import { ServiceType } from "../../../types/Table/TableTypes";
+import { ServiceType, TableColumnProps } from "../../../types/Table/TableTypes";
 import { TableDataProps } from "../../../types/Table/TableTypes";
-import { columnsState } from "../POCTable/SearchPOCTable";
+// import { columnsState } from "../POCTable/SearchPOCTable";
+// import { TableColumnProps } from "antd";
+import type { ColumnType, ColumnsType } from "antd/es/table";
 
 export const TablePage = (cfsType: ServiceType) => {
   // Main Atom State
   const [dataSource, setDataSource] = useRecoilState(tableAtomState);
   // Column Atom
-  const [tableColumns, setTableColumns] = useRecoilState(tableColumnAtomState);
+
+  const columns: ColumnsType<TableDataProps> = [
+    {
+      title: "Id",
+      dataIndex: "id",
+      key: "id",
+    },
+    {
+      title: "CFSResponderId",
+      dataIndex: "CFSResponderId",
+      key: "id",
+    },
+    {
+      title: "Departments",
+      dataIndex: "departments",
+      key: "id",
+      render: (_, { departments }) => (
+        <>
+          {departments.map((department) => {
+            let color = departments.length > 5 ? "geekblue" : "green";
+            if (department === "loser") {
+              color = "volcano";
+            }
+            return (
+              <Tag color={color} key={department}>
+                {department.toUpperCase()}
+              </Tag>
+            );
+          })}
+        </>
+      ),
+    },
+    { title: "Status", dataIndex: "status", key: "id" },
+    { title: "Action", dataIndex: "Action", key: "id" },
+  ];
 
   // Skeleton Loader
   const [skeletonLoading, setSkeletonLoading] = useState(true);
@@ -106,13 +144,13 @@ export const TablePage = (cfsType: ServiceType) => {
 
   // construct columnsConfig
 
-  const columnsConfig = columnsState.map;
+  // const columnsConfig = columnsState.map;
 
   return (
     <TableOrganism
       dataSource={dataSource}
       loading={skeletonLoading}
-      columns={tableColumns}
+      columns={columns}
     />
   );
 };

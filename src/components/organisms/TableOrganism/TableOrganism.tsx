@@ -7,11 +7,12 @@ import {
   TableColumnProps,
   DataSource,
 } from "../../../types/Table/TableTypes";
+import { ColumnsType } from "antd/es/table";
 
 export interface Props {
   dataSource?: DataSource<TableDataProps>;
   loading: boolean;
-  columns: TableColumnProps[];
+  columns: ColumnsType<TableDataProps>;
   // renderSort: (a: TableDataProps, b: TableDataProps) => number;
   // colorizedRow: (_: unknown, index: number) => string;
   // renderStatus: (status: boolean) => JSX.Element;
