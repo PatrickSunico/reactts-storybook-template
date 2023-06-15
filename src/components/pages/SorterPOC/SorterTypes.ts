@@ -9,6 +9,7 @@ export interface TableDataProps {
   CFSResponderId: number;
   departments: string[];
   status: boolean;
+  action?: () => void;
 }
 
 // FilterProps.ts

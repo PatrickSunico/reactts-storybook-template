@@ -1,19 +1,48 @@
+/* Size */
+.btn-xs {
+  @apply px-1 py-1;
+}
+
+.btn-sm {
+  @apply px-2 py-2;
+}
+
+.btn-md {
+  @apply px-3 py-3;
+}
+
+.btn-lg {
+  @apply px-4 py-4;
+}
+
+.btn-xl {
+  @apply px-5 py-5;
+}
+
+.btn-xxl {
+  @apply px-6 py-6;
+}
+
 .btn-primary {
-  @apply px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm;
+  @apply font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm;
 }
 
 .btn-secondary {
-  @apply px-4 py-2 font-semibold text-sm bg-purple-300 text-white rounded-full shadow-sm;
+  @apply font-semibold text-sm bg-purple-300 text-white rounded-full shadow-sm;
 }
 
 .btn-tertiary {
-  @apply px-4 py-2 font-semibold text-sm bg-zinc-500 text-white rounded-full shadow-sm;
+  @apply font-semibold text-sm bg-zinc-500 text-white rounded-full shadow-sm;
 }
 
 .btn-accept {
-  @apply px-4 py-2 font-semibold text-sm bg-green-800 text-white rounded-full shadow-sm;
+  @apply font-semibold text-sm bg-green-800 text-white rounded-full shadow-sm;
 }
 
 .btn-danger {
-  @apply px-4 py-2 font-semibold text-sm bg-red-600 text-white rounded-full shadow-sm;
+  @apply font-semibold text-sm bg-red-600 text-white rounded-full shadow-sm;
+}
+
+.btn-search-filter {
+  @apply font-semibold text-sm bg-sky-500 text-white rounded shadow-sm;
 }

@@ -9,20 +9,22 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     | "btn-secondary"
     | "btn-tertiary"
     | "btn-danger"
+    | "btn-search-filter"
     | "btn-accept";
   backgroundColor?: string;
+  size: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
   onClick?: () => void;
 }
 
 export const Button = ({
   children,
   variant,
+  size,
   className,
   backgroundColor,
   ...props
 }: ButtonProps) => {
-  const styles = [className, variant].join(" ");
-  // const styles = `${variant} ${className ? className : ""}`;
+  const styles = [className, variant, size].join(" ");
   return (
     <button {...props} className={styles} style={{ backgroundColor }}>
       {children}

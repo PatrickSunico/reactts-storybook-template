@@ -20,7 +20,9 @@ export interface TableColumnProps {
   title: string;
   dataIndex: string;
   key: string;
-  // render?: (_: unknown, record: { departments: [string] }) => JSX.Element;
+  filterDropdown?: () => JSX.Element;
+  filterIcon?: () => JSX.Element;
+  onFilter?: () => boolean;
 }
 
 // Datasource Prop Destructured

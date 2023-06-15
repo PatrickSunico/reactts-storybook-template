@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Table, Input, Space, Button } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
-import { useRecoilValue, useRecoilState } from "recoil";
-// import {
-//   tableDataState,
-//   filterState,
-//   sorterState,
-// } from "../recoil/atomState/tableState";
 
+// Recoil
+import { useRecoilValue, useRecoilState } from "recoil";
+
+// Ant Design Table
+import { ColumnProps } from "antd/es/table";
+import { Tag } from "antd";
+import { Table, Input, Space } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
+
+// Types
 import { tableDataState, filterState, sorterState } from "./SorterTableState";
-import {
-  TableDataProps,
-  FilterProps,
-  SorterProps,
-  ServiceType,
-} from "./SorterTypes";
+import { TableDataProps, FilterProps, SorterProps } from "./SorterTypes";
 import DataService from "../../../core/services/data.service";
 
+// Custom Storybook Components
+import { Button } from "../../atoms/atomIndex";
+
 interface SorterTableProps {
-  title: string;
-  showPagination: boolean;
   cfsType: string;
 }
 
-const TableSorter: React.FC<SorterTableProps> = ({ cfsType }: ServiceType) => {
-  console.log(cfsType);
+const TableSorter: React.FC<SorterTableProps> = ({ cfsType }) => {
   const [tableData, setTableData] = useRecoilState(tableDataState);
   const filter = useRecoilValue(filterState);
   const sorter = useRecoilValue(sorterState);
@@ -101,16 +98,17 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }: ServiceType) => {
       />
       <Space>
         <Button
-          type="primary"
+          variant="btn-primary"
+          size="xs"
           onClick={() => confirm()}
-          size="small"
           style={{ width: 90 }}
         >
           Search
         </Button>
         <Button
+          variant="btn-danger"
+          size="xs"
           onClick={() => clearFilters()}
-          size="small"
           style={{ width: 90 }}
         >
           Reset
@@ -126,7 +124,7 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }: ServiceType) => {
   const onFilter = (value: string, record: TableDataProps) =>
     record.CFSResponderId.toString().includes(value);
 
-  const columns = [
+  const columns: Array<ColumnProps<TableDataProps>> = [
     {
       title: "Id",
       dataIndex: "id",
@@ -144,13 +142,34 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }: ServiceType) => {
       title: "Departments",
       dataIndex: "departments",
       key: "departments",
-      render: (departments: string[]) => departments.join(", "),
+      render: (departments: string[]) => (
+        <span>
+          {departments.map((department) => {
+            let color = department.length > 5 ? "geekblue" : "green";
+            if (department === "loser") {
+              color = "volcano";
+            }
+            return (
+              <Tag color={color} key={department}>
+                {department.toUpperCase()}
+              </Tag>
+            );
+          })}
+        </span>
+      ),
     },
     {
       title: "Status",
       dataIndex: "status",
       key: "status",
       render: (status: boolean) => (status ? "Done" : "In Progress"),
+    },
+
+    {
+      title: "Action",
+      dataIndex: "action",
+      key: "action",
+      render: () => <Button variant="btn-danger">Close CFS</Button>,
     },
   ];
 
@@ -159,15 +178,17 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }: ServiceType) => {
       dataSource={filteredData}
       loading={tableLoading}
       columns={columns}
-      pagination={false}
+      // pagination={true}
       // Set the sorter state when the table column header is clicked
-      onChange={(_, __, sorter) => {
-        const { columnKey, order } = sorter as {
-          columnKey: string;
-          order: "ascend" | "descend" | null;
-        };
-        // Update the sorter state
-      }}
+      // onChange={(_, __, sorter) => {
+      //   const { columnKey, order } = sorter;
+      //   console.log(columnKey, order);
+      //   // const { columnKey, order } = sorter as {
+      //   //   columnKey: string;
+      //   //   order: "ascend" | "descend" | null;
+      //   // };
+      //   // Update the sorter state
+      // }}
     />
   );
 };
