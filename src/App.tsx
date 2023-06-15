@@ -29,10 +29,10 @@ const App = () => {
         </Container>
 
         <Container className="w-full overflow-hidden rounded-lg shadow-xs">
-          <TableSorter cfsType="pendingCFS" />
+          {/* <TableSorter cfsType="pendingCFS" /> */}
           {/* <TablePage cfsType="pendingCFS" /> */}
           {/* <RenderPOCTable /> */}
-          {/* <DataGrid cfsType="pendingCFS" /> */}
+          <DataGrid cfsType="pendingCFS" />
           {/* <TablePage cfsType="pendingCFS" /> */}
           {/* <SkeletonTable /> */}
           {/* <SearchPOCTable /> */}

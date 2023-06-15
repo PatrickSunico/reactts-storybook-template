@@ -96,8 +96,6 @@ export const TablePage = (cfsType: ServiceType) => {
     fetchData(cfsType);
   }, [cfsType, setDataSource]);
 
-<<<<<<< HEAD
-=======
   // Search Method
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState<string>("");
@@ -207,7 +205,6 @@ export const TablePage = (cfsType: ServiceType) => {
 
   // End Search Method
 
->>>>>>> method-branch
   // Passed functions
   const colorizedRow = (_: unknown, index: number) => {
     return index % 2 === 0

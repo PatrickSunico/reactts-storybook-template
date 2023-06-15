@@ -7,6 +7,7 @@ export interface DataSourceItem {
   CFSResponderId: number;
   status: boolean;
   key: string;
+  departments: [string];
 }
 
 // Filter Methods

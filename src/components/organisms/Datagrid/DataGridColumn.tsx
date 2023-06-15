@@ -1,8 +1,11 @@
-import { Input } from "antd";
 import React, { useState } from "react";
+
+// Ant Design
+import { Input, Tag } from "antd";
 import { ColumnType } from "antd/lib/table/interface";
 import { SearchOutlined } from "@ant-design/icons";
 
+// DataGridTypes
 import { DataSourceItem, CustomFilterDropdownProps } from "./DataGridTypes";
 
 export const CustomFilterDropdown: React.FC<CustomFilterDropdownProps> = ({
@@ -15,7 +18,6 @@ export const CustomFilterDropdown: React.FC<CustomFilterDropdownProps> = ({
     setSelectedKeys(value ? [value] : []);
     confirm();
   };
-  console.log(value);
 
   return (
     <div style={{ padding: 8 }}>
@@ -31,9 +33,6 @@ export const CustomFilterDropdown: React.FC<CustomFilterDropdownProps> = ({
   );
 };
 
-// export const onSort = () => {
-//   setSortOrder(order);
-// }
 export const columns: ColumnType<DataSourceItem>[] = [
   {
     title: "Id",
@@ -59,10 +58,33 @@ export const columns: ColumnType<DataSourceItem>[] = [
   },
 
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
+    title: "Departments",
+    dataIndex: "departments",
+    key: "departments",
+
+    render: (_, { departments }) => (
+      <>
+        {departments.map((department) => {
+          let color = department.length > 5 ? "geekblue" : "green";
+          if (department === "loser") {
+            color = "volcano";
+          }
+          return (
+            <Tag color={color} key={department}>
+              {department.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </>
+    ),
   },
 
+  {
+    title: "Action",
+    dataIndex: "action",
+    key: "action",
+    // render: () => <Button variant="btn-danger">Close CFS</Button>,
+  },
+  {},
   // Additional columns...
 ];
