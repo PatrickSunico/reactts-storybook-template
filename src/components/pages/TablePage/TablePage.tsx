@@ -20,10 +20,13 @@ import { SearchOutlined } from "@ant-design/icons";
 import type { InputRef } from "antd";
 import { Input, Space } from "antd";
 import type { ColumnType, ColumnsType } from "antd/es/table";
-import type { FilterConfirmProps } from "antd/es/table/interface";
+import type {
+  FilterConfirmProps,
+  FilterDropdownProps,
+} from "antd/es/table/interface";
 import Highlighter from "react-highlight-words";
 
-export interface FilterMethods {
+export interface FilterMethods extends FilterDropdownProps {
   setSelectedKeys: (e: React.Key[]) => void;
   selectedKeys: React.Key[];
   confirm: () => void;
@@ -90,6 +93,7 @@ export const TablePage = (cfsType: ServiceType) => {
     columnName,
   }: FilterMethods) => (
     <div className="px-8 py-8">
+      {console.log(columnName)}
       <Input
         placeholder={`Search ${columnName}`}
         value={selectedKeys[0]}

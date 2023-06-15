@@ -59,7 +59,14 @@ export const TableOrganism = ({
         dataIndex="id"
         sorter={(a: TableDataProps, b: TableDataProps) => renderSort(a, b)}
       />
-      <Column title="CFSResponderId" dataIndex="CFSResponderId" />
+      <Column
+        title="CFSResponderId"
+        dataIndex="CFSResponderId"
+        filterDropdown={filterDropDown}
+        filteredValue={filteredValue}
+        filterIcon={filterIcon}
+        onFilterDropdownOpenChange={onFilterDropdownOpenChange}
+      />
       <Column title="Status" dataIndex="status" render={renderStatus} />
       <Column title="Action" dataIndex="key" render={renderActionButton} />
     </Table>
