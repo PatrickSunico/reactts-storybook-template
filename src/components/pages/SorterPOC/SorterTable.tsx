@@ -39,7 +39,7 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }: ServiceType) => {
         setTableData(response);
         setTableLoading(false);
       } catch (error) {
-        console.error("Error fetching todos:", error);
+        console.error("Error Fetching Data:", error);
       }
     };
     fetchData(cfsType);
@@ -57,19 +57,74 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }: ServiceType) => {
   if (filter.status !== null) {
     filteredData = filteredData.filter((item) => item.status === filter.status);
   }
-  if (sorter.columnKey && sorter.order) {
-    filteredData = filteredData.sort((a, b) => {
-      const aValue = a[sorter.columnKey as keyof TableDataProps] as string;
-      const bValue = b[sorter.columnKey as keyof TableDataProps] as string;
-      if (aValue < bValue) {
-        return sorter.order === "ascend" ? -1 : 1;
-      }
-      if (aValue > bValue) {
-        return sorter.order === "ascend" ? 1 : -1;
-      }
-      return 0;
-    });
+
+  // if (sorter.columnKey && sorter.order) {
+  //   filteredData = filteredData.sort((a, b) => {
+  //     const aValue = a[sorter.columnKey as keyof TableDataProps] as string;
+  //     const bValue = b[sorter.columnKey as keyof TableDataProps] as string;
+  //     if (aValue < bValue) {
+  //       return sorter.order === "ascend" ? -1 : 1;
+  //     }
+  //     if (aValue > bValue) {
+  //       return sorter.order === "ascend" ? 1 : -1;
+  //     }
+  //     return 0;
+  //   });
+  // }
+
+  interface FilterDropdownProps {
+    setSelectedKeys: (selectedKeys: [] | []) => void;
+    selectedKeys: string[];
+    confirm: () => void;
+    clearFilters: () => void;
   }
+
+  interface FilterIcon {
+    filtered: boolean;
+  }
+
+  const filterDropdownMethod = ({
+    setSelectedKeys,
+    selectedKeys,
+    confirm,
+    clearFilters,
+  }: FilterDropdownProps) => (
+    <div style={{ padding: 8 }}>
+      <Input
+        placeholder="Search CFS Responder Id"
+        value={selectedKeys[0]}
+        onChange={(e) =>
+          setSelectedKeys(e.target.value ? [e.target.value] : [])
+        }
+        onPressEnter={() => confirm()}
+        style={{ width: 188, marginBottom: 8, display: "block" }}
+      />
+      <Space>
+        <Button
+          type="primary"
+          onClick={() => confirm()}
+          size="small"
+          style={{ width: 90 }}
+        >
+          Search
+        </Button>
+        <Button
+          onClick={() => clearFilters()}
+          size="small"
+          style={{ width: 90 }}
+        >
+          Reset
+        </Button>
+      </Space>
+    </div>
+  );
+
+  const renderFilterIcon = ({ filtered }: FilterIcon) => (
+    <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+  );
+
+  const onFilter = (value: string, record: TableDataProps) =>
+    record.CFSResponderId.toString().includes(value);
 
   const columns = [
     {
@@ -81,47 +136,9 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }: ServiceType) => {
       title: "CFS Responder Id",
       dataIndex: "CFSResponderId",
       key: "CFSResponderId",
-      sorter: true,
-      filterDropdown: ({
-        setSelectedKeys,
-        selectedKeys,
-        confirm,
-        clearFilters,
-      }) => (
-        <div style={{ padding: 8 }}>
-          <Input
-            placeholder="Search CFS Responder Id"
-            value={selectedKeys[0]}
-            onChange={(e) =>
-              setSelectedKeys(e.target.value ? [e.target.value] : [])
-            }
-            onPressEnter={() => confirm()}
-            style={{ width: 188, marginBottom: 8, display: "block" }}
-          />
-          <Space>
-            <Button
-              type="primary"
-              onClick={() => confirm()}
-              size="small"
-              style={{ width: 90 }}
-            >
-              Search
-            </Button>
-            <Button
-              onClick={() => clearFilters()}
-              size="small"
-              style={{ width: 90 }}
-            >
-              Reset
-            </Button>
-          </Space>
-        </div>
-      ),
-      filterIcon: (filtered) => (
-        <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
-      ),
-      onFilter: (value, record) =>
-        record.CFSResponderId.toString().includes(value),
+      filterDropdown: filterDropdownMethod,
+      filterIcon: renderFilterIcon,
+      onFilter: onFilter,
     },
     {
       title: "Departments",
