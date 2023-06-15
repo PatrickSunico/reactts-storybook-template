@@ -10,6 +10,8 @@ import POCTable from "./components/pages/POCTable/POCTable";
 import FilterTable from "./components/pages/FilterByDate/FilterByDate";
 import SkeletonTable from "./components/pages/POCTable/SkeletonTable";
 import SearchPOCTable from "./components/pages/POCTable/SearchPOCTable";
+import { DataGrid } from "./components/organisms/Datagrid/DataGrid";
+import { POC2Table } from "./components/pages/POCTable/POC2Table";
 
 const App = () => {
   return (
@@ -23,7 +25,8 @@ const App = () => {
         </Container>
 
         <Container className="w-full overflow-hidden rounded-lg shadow-xs">
-          <TablePage cfsType="pendingCFS" />
+          <DataGrid cfsType="pendingCFS" />
+          {/* <TablePage cfsType="pendingCFS" /> */}
           {/* <SkeletonTable /> */}
           {/* <SearchPOCTable /> */}
           {/* <POCTable /> */}
