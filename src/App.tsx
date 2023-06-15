@@ -12,6 +12,8 @@ import SkeletonTable from "./components/pages/POCTable/SkeletonTable";
 import SearchPOCTable from "./components/pages/POCTable/SearchPOCTable";
 import RenderPOCTable from "./components/pages/POCTable/RenderPOCTable";
 import TableSorter from "./components/pages/SorterPOC/SorterTable";
+import { DataGrid } from "./components/organisms/Datagrid/DataGrid";
+import { POC2Table } from "./components/pages/POCTable/POC2Table";
 
 const App = () => {
   return (
@@ -21,13 +23,17 @@ const App = () => {
           <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">
             Close Active CFS
           </h2>
-          <Button variant="btn-danger">Close All</Button>
+          <Button size="xs" variant="btn-danger">
+            Close All
+          </Button>
         </Container>
 
         <Container className="w-full overflow-hidden rounded-lg shadow-xs">
           <TableSorter cfsType="pendingCFS" />
           {/* <TablePage cfsType="pendingCFS" /> */}
           {/* <RenderPOCTable /> */}
+          {/* <DataGrid cfsType="pendingCFS" /> */}
+          {/* <TablePage cfsType="pendingCFS" /> */}
           {/* <SkeletonTable /> */}
           {/* <SearchPOCTable /> */}
           {/* <POCTable /> */}

@@ -21,11 +21,22 @@ export interface Props {
 
 export const TableOrganism = ({ dataSource, loading, columns }: Props) => {
   return (
-    <Table
-      loading={loading}
-      dataSource={dataSource?.data}
-      pagination={false}
-      columns={columns}
-    />
+    <Table loading={loading} dataSource={dataSource?.data} pagination={false}>
+      <Column
+        title="#"
+        dataIndex="id"
+        sorter={(a: TableDataProps, b: TableDataProps) => renderSort(a, b)}
+      />
+      <Column
+        title="CFSResponderId"
+        dataIndex="CFSResponderId"
+        filterDropdown={filterDropDown}
+        filteredValue={filteredValue}
+        filterIcon={filterIcon}
+        onFilterDropdownOpenChange={onFilterDropdownOpenChange}
+      />
+      <Column title="Status" dataIndex="status" render={renderStatus} />
+      <Column title="Action" dataIndex="key" render={renderActionButton} />
+    </Table>
   );
 };
