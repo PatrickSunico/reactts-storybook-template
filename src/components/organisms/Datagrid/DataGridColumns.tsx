@@ -1,39 +1,14 @@
-import React, { useState } from "react";
-
 // Ant Design
 import { Input, Tag } from "antd";
 import { ColumnType } from "antd/lib/table/interface";
-import { SearchOutlined } from "@ant-design/icons";
 
 // DataGridTypes
 import { DataSourceItem, CustomFilterDropdownProps } from "./DataGridTypes";
 
-export const CustomFilterDropdown: React.FC<CustomFilterDropdownProps> = ({
-  setSelectedKeys,
-  confirm,
-}) => {
-  const [value, setValue] = useState<string>("");
+import { DataGridFilterDropdown } from "./DataGridFilterDropdown";
+import { SearchOutlined } from "@ant-design/icons";
 
-  const handleSearch = () => {
-    setSelectedKeys(value ? [value] : []);
-    confirm();
-  };
-
-  return (
-    <div style={{ padding: 8 }}>
-      <Input
-        placeholder="Search name"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onPressEnter={handleSearch}
-        style={{ width: 188, marginBottom: 8, display: "block" }}
-      />
-      <button onClick={handleSearch}>Search</button>
-    </div>
-  );
-};
-
-export const columns: ColumnType<DataSourceItem>[] = [
+export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
     title: "Id",
     dataIndex: "id",
@@ -45,7 +20,7 @@ export const columns: ColumnType<DataSourceItem>[] = [
     dataIndex: "CFSResponderId",
     key: "CFSResponderId",
     sorter: (a, b) => a.CFSResponderId - b.CFSResponderId,
-    filterDropdown: CustomFilterDropdown,
+    filterDropdown: DataGridFilterDropdown,
     filterIcon: (filtered) => (
       <div style={{ color: filtered ? "#1890ff" : undefined }}>
         <SearchOutlined />
@@ -61,7 +36,6 @@ export const columns: ColumnType<DataSourceItem>[] = [
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
-
     render: (_, { departments }) => (
       <>
         {departments.map((department) => {
@@ -85,6 +59,5 @@ export const columns: ColumnType<DataSourceItem>[] = [
     key: "action",
     // render: () => <Button variant="btn-danger">Close CFS</Button>,
   },
-  {},
   // Additional columns...
 ];

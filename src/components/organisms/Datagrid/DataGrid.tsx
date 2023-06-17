@@ -18,7 +18,7 @@ import {
   CustomFilterDropdownProps,
   ServiceType,
 } from "./DataGridTypes";
-import { columns } from "./DataGridColumn";
+import { DataGridColumns } from "./DataGridColumns";
 import { dataGridAtomState } from "./DataGridTableState";
 
 export const DataGrid: React.FC<ServiceType> = (cfsType) => {
@@ -27,9 +27,7 @@ export const DataGrid: React.FC<ServiceType> = (cfsType) => {
   useEffect(() => {
     const fetchData = async ({ cfsType }: ServiceType) => {
       try {
-        // setSkeletonLoading(true);
         const response = await DataService.getAllData(cfsType);
-        console.log(response);
         setDataSource(response);
       } catch (error) {
         console.error("Error fetching todos:", error);
@@ -38,14 +36,10 @@ export const DataGrid: React.FC<ServiceType> = (cfsType) => {
     fetchData(cfsType);
   }, [cfsType, setDataSource]);
 
-  // const [sortOrder, setSortOrder] = useState<"ascend" | "descend" | undefined>(
-  //   undefined,
-  // );
-
   return (
     <Table<DataSourceItem>
       dataSource={dataSource}
-      columns={columns}
+      columns={DataGridColumns}
       // onChange={(pagination, filters, sorter) => onSort(sorter.order)}
     />
   );
