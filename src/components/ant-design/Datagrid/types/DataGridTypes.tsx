@@ -1,3 +1,5 @@
+import type { FilterDropdownProps } from "antd/es/table/interface";
+
 export interface ServiceType {
   cfsType: string;
 }
@@ -11,9 +13,10 @@ export interface DataSourceItem {
 }
 
 // Filter Methods
-export interface CustomFilterDropdownProps {
+export interface FilterProps extends FilterDropdownProps {
   setSelectedKeys: (selectedKeys: React.Key[]) => void;
   confirm: () => void;
+  clearFilters?: () => void;
 }
 
 // Datasource Prop Destructured

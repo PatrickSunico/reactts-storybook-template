@@ -1,12 +1,15 @@
 // Ant Design
-import { Input, Tag } from "antd";
+import { Tag } from "antd";
 import { ColumnType } from "antd/lib/table/interface";
+import { SearchOutlined } from "@ant-design/icons";
 
 // DataGridTypes
-import { DataSourceItem, CustomFilterDropdownProps } from "./DataGridTypes";
+import { DataSourceItem } from "../types/DataGridTypes";
 
-import { DataGridFilterDropdown } from "./DataGridFilterDropdown";
-import { SearchOutlined } from "@ant-design/icons";
+// Filter Components
+import { DataGridSearchFilter } from "./DataGridSearchFilter";
+
+import { DataGridPopConfirm } from "./DataGridPopUpConfirm/DataGridPopConfirm";
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -20,7 +23,7 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     dataIndex: "CFSResponderId",
     key: "CFSResponderId",
     sorter: (a, b) => a.CFSResponderId - b.CFSResponderId,
-    filterDropdown: DataGridFilterDropdown,
+    filterDropdown: DataGridSearchFilter,
     filterIcon: (filtered) => (
       <div style={{ color: filtered ? "#1890ff" : undefined }}>
         <SearchOutlined />
@@ -52,12 +55,21 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
       </>
     ),
   },
-
+  {
+    title: "Status",
+    dataIndex: "status",
+    key: "status",
+  },
   {
     title: "Action",
     dataIndex: "action",
     key: "action",
-    // render: () => <Button variant="btn-danger">Close CFS</Button>,
+    render: (_, record) => (
+      <DataGridPopConfirm
+        title="Are you sure you want to close this CFS?"
+        record={record}
+      />
+    ),
   },
   // Additional columns...
 ];

@@ -10,16 +10,16 @@ import ReactDOM from "react-dom";
 // Recoil
 
 // Services
-import DataService from "../../../core/services/data.service";
+import DataService from "../../../../core/services/data.service";
 
 // Data Types
 import {
   DataSourceItem,
-  CustomFilterDropdownProps,
+  FilterProps,
   ServiceType,
-} from "./DataGridTypes";
-import { DataGridColumns } from "./DataGridColumns";
-import { dataGridAtomState } from "./DataGridTableState";
+} from "../types/DataGridTypes";
+import { DataGridColumns } from "../molecules/DataGridColumns";
+import { dataGridAtomState } from "../../../../core/recoil/atomState/DataGridTableState";
 
 export const DataGrid: React.FC<ServiceType> = (cfsType) => {
   const [dataSource, setDataSource] = useRecoilState(dataGridAtomState);

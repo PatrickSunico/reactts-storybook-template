@@ -3,17 +3,7 @@ import "antd/dist/reset.css";
 
 // Atoms
 import { MainParent, Container, Button } from "./components/atoms/atomIndex";
-// import { TableOrganism } from "./components/organisms/organismIndex";
-import { TablePage } from "./components/pages/TablePage/TablePage";
-// import POCTable from "./components/pages/POCTable/POCTable";
-import POCTable from "./components/pages/POCTable/POCTable";
-import FilterTable from "./components/pages/FilterByDate/FilterByDate";
-import SkeletonTable from "./components/pages/POCTable/SkeletonTable";
-import SearchPOCTable from "./components/pages/POCTable/SearchPOCTable";
-import RenderPOCTable from "./components/pages/POCTable/RenderPOCTable";
-import TableSorter from "./components/pages/SorterPOC/SorterTable";
-import { DataGrid } from "./components/organisms/Datagrid/DataGrid";
-import { POC2Table } from "./components/pages/POCTable/POC2Table";
+import { DataGrid } from "./components/ant-design/Datagrid/organisms/DataGrid";
 
 const App = () => {
   return (
@@ -23,25 +13,13 @@ const App = () => {
           <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">
             Close Active CFS
           </h2>
-          <Button size="xs" variant="btn-danger">
+          <Button className="px-2 py-1" variant="btn-danger">
             Close All
           </Button>
         </Container>
 
         <Container className="w-full overflow-hidden rounded-lg shadow-xs">
-          {/* <TableSorter cfsType="pendingCFS" /> */}
-          {/* <TablePage cfsType="pendingCFS" /> */}
-          {/* <RenderPOCTable /> */}
           <DataGrid cfsType="pendingCFS" />
-          {/* <TablePage cfsType="pendingCFS" /> */}
-          {/* <SkeletonTable /> */}
-          {/* <SearchPOCTable /> */}
-          {/* <POCTable /> */}
-          {/* <FilterTable /> */}
-
-          {/* <TablePage type="activeCFS" /> */}
-
-          {/* <TableOrganism /> */}
         </Container>
       </Container>
     </MainParent>
