@@ -1,23 +1,19 @@
-// React Libraries
 import { Popconfirm } from "antd";
 
 // Types
-import { DataSourceItem } from "../../types/DataGridTypes";
+import { DataSourceItem } from "../Datagrid/types/DataGridTypes";
 
 // Custom Atomic CFS
 import { Button } from "antd";
 
-interface DataGridPopConfirmType {
-  title: string;
-  record: DataSourceItem;
+interface CustomPopConfirmType {
+  title?: string;
+  record?: DataSourceItem;
 }
 
-export const DataGridPopConfirm = ({
-  title,
-  record,
-}: DataGridPopConfirmType) => {
-  const handleDelete = (record: DataSourceItem) => {
-    console.log(record);
+export const CustomPopConfirm = ({ title, record }: CustomPopConfirmType) => {
+  const handleDelete = (record?: DataSourceItem) => {
+    // console.log(record);
   };
 
   return (
@@ -26,7 +22,6 @@ export const DataGridPopConfirm = ({
       onConfirm={() => handleDelete(record)}
       okButtonProps={{ className: "pop-confirm-button", danger: true }}
     >
-      {/* <Button className="px-2 py-1 btn-danger">Close CFS </Button> */}
       <Button type="primary" className="px-2 py-1 btn-danger" danger>
         Close CFS
       </Button>

@@ -9,7 +9,7 @@ import { DataSourceItem } from "../types/DataGridTypes";
 // Filter Components
 import { DataGridSearchFilter } from "./DataGridSearchFilter";
 
-import { DataGridPopConfirm } from "./DataGridPopUpConfirm/DataGridPopConfirm";
+import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -59,13 +59,14 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Status",
     dataIndex: "status",
     key: "status",
+    render: (status: boolean) => (status ? "Closed" : "Active"),
   },
   {
     title: "Action",
     dataIndex: "action",
     key: "action",
     render: (_, record) => (
-      <DataGridPopConfirm
+      <CustomPopConfirm
         title="Are you sure you want to close this CFS?"
         record={record}
       />

@@ -1,9 +1,11 @@
 import type { FilterDropdownProps } from "antd/es/table/interface";
 
+// CFS Api Service Type
 export interface ServiceType {
   cfsType: string;
 }
 
+// DataSourceItem
 export interface DataSourceItem {
   id: number;
   CFSResponderId: number;

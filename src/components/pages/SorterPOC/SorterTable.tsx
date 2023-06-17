@@ -164,7 +164,6 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }) => {
       key: "status",
       render: (status: boolean) => (status ? "Done" : "In Progress"),
     },
-
     {
       title: "Action",
       dataIndex: "action",
