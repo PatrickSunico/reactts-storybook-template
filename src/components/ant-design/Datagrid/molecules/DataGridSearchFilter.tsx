@@ -7,7 +7,6 @@ import { Input } from "antd";
 import { FilterProps } from "../types/DataGridTypes";
 
 // Custom Components
-// import { Button, Container } from "../../../atoms/atomIndex";
 import { Button, Container } from "../../../atoms/atomIndex";
 
 export const DataGridSearchFilter = ({

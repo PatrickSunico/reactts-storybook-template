@@ -7,7 +7,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import { DataSourceItem } from "../types/DataGridTypes";
 
 // Filter Components
-import { DataGridSearchFilter } from "./DataGridSearchFilter";
+import { DataGridSearchFilter } from "../molecules/DataGridSearchFilter";
 
 import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
 
@@ -68,6 +68,9 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     render: (_, record) => (
       <CustomPopConfirm
         title="Are you sure you want to close this CFS?"
+        type="primary"
+        danger={true}
+        buttonMsg="Close CFS"
         record={record}
       />
     ),

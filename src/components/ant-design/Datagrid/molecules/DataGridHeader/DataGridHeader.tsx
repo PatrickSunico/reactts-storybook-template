@@ -13,7 +13,12 @@ export const DataGridHeader = () => {
         Close Active CFS
       </h2>
 
-      <CustomPopConfirm title="Are you sure you want to delete all" />
+      <CustomPopConfirm
+        title="Are you sure you want to delete all"
+        buttonMsg="Close All CFS"
+        type="primary"
+        danger={true}
+      />
     </Container>
   );
 };

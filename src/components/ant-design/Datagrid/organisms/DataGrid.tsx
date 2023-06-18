@@ -8,7 +8,7 @@ import DataService from "../../../../core/services/data.service";
 
 // Data Types
 import { DataSourceItem, ServiceType } from "../types/DataGridTypes";
-import { DataGridColumns } from "../molecules/DataGridColumns";
+import { DataGridColumns } from "./DataGridColumns";
 import { dataGridAtomState } from "../../../../core/recoil/atomState/DataGridTableState";
 
 export const DataGrid = (cfsType: ServiceType) => {
@@ -26,7 +26,5 @@ export const DataGrid = (cfsType: ServiceType) => {
     fetchData(cfsType);
   }, [cfsType, setDataSource]);
 
-  return (
-    <Table<DataSourceItem> dataSource={dataSource} columns={DataGridColumns} />
-  );
+  return <Table dataSource={dataSource} columns={DataGridColumns} />;
 };
