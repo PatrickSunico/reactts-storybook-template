@@ -1,3 +1,6 @@
+// React Libraries
+import { memo } from "react";
+
 // Ant Design Components
 import { Popconfirm } from "antd";
 
@@ -22,26 +25,47 @@ interface CustomPopConfirmType extends ButtonProps {
   type?: ButtonType;
 }
 
-export const CustomPopConfirm = ({
-  title,
-  record,
-  buttonMsg,
-  danger,
-  type,
-}: CustomPopConfirmType) => {
-  const handleDelete = (record?: DataSourceItem) => {
-    console.log(record);
-  };
+export const CustomPopConfirm = memo(
+  ({ title, record, buttonMsg, danger, type }: CustomPopConfirmType) => {
+    const [dataSource, setDataSource] = useRecoilState(dataGridAtomState);
+    const handleAction = (record?: DataSourceItem) => {
+      /**
+       * Updates the CloseCFS Status instead
+       */
+      const updatedStatus = dataSource.map((item) => {
+        if (item.id === record?.id) {
+          return { ...item, status: !item.status };
+        }
+        return item;
+      });
 
-  return (
-    <Popconfirm
-      title={title}
-      onConfirm={() => handleDelete(record)}
-      okButtonProps={{ className: "pop-confirm-button", danger }}
-    >
-      <Button type={type} className="px-2 py-1 btn-danger" danger={danger}>
-        {buttonMsg}
-      </Button>
-    </Popconfirm>
-  );
-};
+      setDataSource(updatedStatus);
+      /**
+       * Delete Row Method
+       */
+      // const updatedDataSource = dataSource.filter(
+      //   (item) => item.id !== record?.id,
+      // );
+      // setDataSource(updatedDataSource);
+    };
+
+    return (
+      <Popconfirm
+        title={title}
+        onConfirm={() => handleAction(record)}
+        okButtonProps={{ className: "pop-confirm-button", danger }}
+      >
+        <Button type={type} className="px-2 py-1 btn-danger" danger={danger}>
+          {buttonMsg}
+        </Button>
+      </Popconfirm>
+    );
+  },
+
+  (prevProps, nextProps) => {
+    if (prevProps.record?.status === nextProps.record?.status) {
+      return true;
+    }
+    return false;
+  },
+);

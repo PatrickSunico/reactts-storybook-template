@@ -11,7 +11,8 @@ export interface DataSourceItem {
   CFSResponderId: number;
   status: boolean;
   key: string;
-  departments: [string];
+  departments: [{ id: number; department: string }];
+  groups: [{ id: number; group: string }];
 }
 
 // Filter Methods

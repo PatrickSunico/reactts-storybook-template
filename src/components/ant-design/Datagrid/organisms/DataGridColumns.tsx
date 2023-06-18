@@ -7,9 +7,10 @@ import { SearchOutlined } from "@ant-design/icons";
 import { DataSourceItem } from "../types/DataGridTypes";
 
 // Filter Components
-import { DataGridSearchFilter } from "../molecules/DataGridSearchFilter";
+import { DataGridSearchFilter } from "../molecules/DataGirdSearchFilter/DataGridSearchFilter";
 
 import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
+import { DataGridDepartments } from "../molecules/DataGridDepartments/DataGridDepartments";
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -39,27 +40,27 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
-    render: (_, { departments }) => (
-      <>
-        {departments.map((department) => {
-          let color = department.length > 5 ? "geekblue" : "green";
-          if (department === "loser") {
-            color = "volcano";
-          }
-          return (
-            <Tag color={color} key={department}>
-              {department.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </>
+    render: (_, { status, departments }) => (
+      <DataGridDepartments status={status} departments={departments} />
     ),
   },
   {
     title: "Status",
     dataIndex: "status",
     key: "status",
+    shouldCellUpdate: (record, prevRecord) => {
+      // Deep Compare
+      const rowContentNotChanged =
+        JSON.stringify(record) === JSON.stringify(prevRecord);
+      return rowContentNotChanged ? false : true;
+    },
     render: (status: boolean) => (status ? "Closed" : "Active"),
+  },
+  {
+    title: "Group",
+    dataIndex: "group",
+    key: "group",
+    // render: (_, groups) => groips,
   },
   {
     title: "Action",

@@ -5,6 +5,10 @@ import { Button } from "antd";
 import { Container } from "../../../../atoms/atomIndex";
 import { CustomPopConfirm } from "../../../CustomPopConfirm/CustomPopConfirm";
 
+// Recoil
+import { useRecoilState } from "recoil";
+import { dataGridAtomState } from "../../../core/recoil/atomState/DataGridTableState";
+
 export const DataGridHeader = () => {
   const handleDelete = () => {};
   return (
@@ -14,7 +18,7 @@ export const DataGridHeader = () => {
       </h2>
 
       <CustomPopConfirm
-        title="Are you sure you want to delete all"
+        title="Are you sure you want to close all"
         buttonMsg="Close All CFS"
         type="primary"
         danger={true}
