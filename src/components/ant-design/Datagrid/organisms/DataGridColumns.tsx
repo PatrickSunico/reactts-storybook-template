@@ -7,10 +7,12 @@ import { SearchOutlined } from "@ant-design/icons";
 import { DataSourceItem } from "../types/DataGridTypes";
 
 // Filter Components
-import { DataGridSearchFilter } from "../molecules/DataGirdSearchFilter/DataGridSearchFilter";
+import { DataGridSearchFilter } from "../molecules/DataGridSearchFilter/DataGridSearchFilter";
 
 import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
 import { DataGridDepartments } from "../molecules/DataGridDepartments/DataGridDepartments";
+import { formatDepartments } from "../../../../core/utils/dataMapper";
+import { DataGridCategoryFilter } from "../molecules/DataGridCategoryFilter/DataGridCategoryFilter";
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -40,6 +42,11 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
+    filters: [],
+    // filters: formatDepartments,
+    filterMode: "menu",
+    filterMultiple: true,
+    filterDropdown: DataGridCategoryFilter,
     render: (_, { status, departments }) => (
       <DataGridDepartments status={status} departments={departments} />
     ),
@@ -60,7 +67,7 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Group",
     dataIndex: "group",
     key: "group",
-    // render: (_, groups) => groips,
+    // render: (_, groups) => groups,
   },
   {
     title: "Action",

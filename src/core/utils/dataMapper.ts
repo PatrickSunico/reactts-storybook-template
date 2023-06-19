@@ -10,3 +10,12 @@ export const formatDataToObject = (array: []) => {
 
   return formattedArray;
 };
+
+export const formatDepartments = (array: []) => {
+  const formattedDepartments = array.map(({ id, department }) => ({
+    label: department,
+    value: id,
+  }));
+
+  return formattedDepartments;
+};

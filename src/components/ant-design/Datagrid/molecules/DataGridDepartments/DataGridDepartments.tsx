@@ -5,27 +5,42 @@ interface DataGridDepartmentsProps {
   departments: [{ id: number; department: string }];
 }
 
-// "departments" : [
-//     {"id": 1, department: "System Admins" },
-//     {"id": 2, department: "EMS" },
-//     {"id": 3, department: "Traffic Police" },
-//     {"id": 4, department: "Civil Defense" },
-//     {"id": 5, department: "Fazaa" },
-//     {"id": 6, department: "Central Operations" },
-// ]
-
 export const DataGridDepartments = ({
   status,
   departments,
 }: DataGridDepartmentsProps) => {
-  const renderDepartments = departments.map(({ id, department }) => {
-    console.log(department);
+  return departments.map(({ id, department }) => {
+    let color;
+    switch (department) {
+      case "System Admins":
+        color = "geekblue";
+        break;
+      case "EMS":
+        color = "red";
+        break;
+      case "Traffic Police":
+        color = "blue";
+        break;
+      case "Civil Defense":
+        color = "green";
+        break;
+      case "Fazaa":
+        color = "cyan";
+        break;
+      case "Central Operations":
+        color = "yellow";
+        break;
+      default:
+        color = "bermuda";
+        break;
+    }
+
     return (
-      <Tag color="green" key={id}>
+      <Tag color={color} key={id}>
         {department}
       </Tag>
     );
   });
 
-  return <>{renderDepartments}</>;
+  //   return <>{renderDepartments}</>;
 };

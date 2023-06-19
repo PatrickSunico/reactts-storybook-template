@@ -12,7 +12,7 @@ import { SearchOutlined } from "@ant-design/icons";
 // Types
 import { tableDataState, filterState, sorterState } from "./SorterTableState";
 import { TableDataProps, FilterProps, SorterProps } from "./SorterTypes";
-import DataService from "../../../core/services/data.service";
+import { getAllData } from "../../../core/services/data.service";
 
 // Custom Storybook Components
 import { Button } from "../../atoms/atomIndex";
@@ -32,7 +32,7 @@ const TableSorter: React.FC<SorterTableProps> = ({ cfsType }) => {
     const fetchData = async (cfsType: string) => {
       try {
         setTableLoading(true);
-        const response = await DataService.getAllData(cfsType);
+        const response = await getAllData(cfsType);
         setTableData(response);
         setTableLoading(false);
       } catch (error) {

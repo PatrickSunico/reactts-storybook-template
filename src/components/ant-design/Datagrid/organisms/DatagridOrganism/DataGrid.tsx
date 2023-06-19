@@ -6,10 +6,13 @@ import { memo } from "react";
 // Ant Design
 import { Table } from "antd";
 // Services
-import DataService from "../../../../../core/services/data.service";
+import {
+  getAllData,
+  getDepartmentsList,
+} from "../../../../../core/services/data.service";
 
 // Data Types
-import { DataSourceItem, ServiceType } from "../../types/DataGridTypes";
+import { ServiceType } from "../../types/DataGridTypes";
 import { DataGridColumns } from "../DataGridColumns";
 import { dataGridAtomState } from "../../../../../core/recoil/atomState/DataGridTableState";
 
@@ -25,7 +28,7 @@ export const DataGrid = memo((cfsType: ServiceType) => {
   useEffect(() => {
     const fetchData = async ({ cfsType }: ServiceType) => {
       try {
-        const response = await DataService.getAllData(cfsType);
+        const response = await getAllData(cfsType);
         setDataSource(response);
       } catch (error) {
         console.error("Error", error);

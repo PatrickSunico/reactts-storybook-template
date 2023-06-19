@@ -55,7 +55,7 @@ export const CustomPopConfirm = memo(
         onConfirm={() => handleAction(record)}
         okButtonProps={{ className: "pop-confirm-button", danger }}
       >
-        <Button type={type} className="px-2 py-1 btn-danger" danger={danger}>
+        <Button type={type} className="px-2 py-2 btn-danger" danger={danger}>
           {buttonMsg}
         </Button>
       </Popconfirm>
