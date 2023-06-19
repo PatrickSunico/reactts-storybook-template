@@ -6,10 +6,7 @@ import { memo } from "react";
 // Ant Design
 import { Table } from "antd";
 // Services
-import {
-  getAllData,
-  getDepartmentsList,
-} from "../../../../../core/services/data.service";
+import { getAllData } from "../../../../../core/services/data.service";
 
 // Data Types
 import { ServiceType } from "../../types/DataGridTypes";

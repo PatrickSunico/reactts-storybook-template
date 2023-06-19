@@ -1,8 +1,6 @@
 // Ant Design
-import { Tag } from "antd";
 import { ColumnType } from "antd/lib/table/interface";
-import { SearchOutlined } from "@ant-design/icons";
-
+import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
 // DataGridTypes
 import { DataSourceItem } from "../types/DataGridTypes";
 
@@ -11,8 +9,11 @@ import { DataGridSearchFilter } from "../molecules/DataGridSearchFilter/DataGrid
 
 import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
 import { DataGridDepartments } from "../molecules/DataGridDepartments/DataGridDepartments";
-import { formatDepartments } from "../../../../core/utils/dataMapper";
 import { DataGridCategoryFilter } from "../molecules/DataGridCategoryFilter/DataGridCategoryFilter";
+
+// const [departmentList, setDepartmentList] = useRecoilState(
+//   dataGridDepartmentsState,
+// );
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -26,11 +27,20 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     dataIndex: "CFSResponderId",
     key: "CFSResponderId",
     sorter: (a, b) => a.CFSResponderId - b.CFSResponderId,
-    filterDropdown: DataGridSearchFilter,
+    filterDropdown: (props) => (
+      <DataGridSearchFilter
+        setSelectedKeys={props.setSelectedKeys}
+        selectedKeys={props.selectedKeys}
+        confirm={props.confirm}
+        clearFilters={props.clearFilters}
+      />
+    ),
     filterIcon: (filtered) => (
-      <div style={{ color: filtered ? "#1890ff" : undefined }}>
-        <SearchOutlined />
-      </div>
+      <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+
+      // <div style={{ color: filtered ? "#1890ff" : undefined }}>
+      //   <Icon type="search-outlined" />
+      // </div>
     ),
     onFilter: (value, record) =>
       record.CFSResponderId.toString()
@@ -42,11 +52,24 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
-    filters: [],
-    // filters: formatDepartments,
-    filterMode: "menu",
-    filterMultiple: true,
-    filterDropdown: DataGridCategoryFilter,
+    filterDropdown: (props) => (
+      <DataGridCategoryFilter
+        setSelectedKeys={props.setSelectedKeys}
+        selectedKeys={props.selectedKeys}
+        confirm={props.confirm}
+        clearFilters={props.clearFilters}
+      />
+    ),
+    // onFilter: (value, record) => record.departments.includes(value),
+    onFilter: (value, record) => {
+      const departmentIds = record.departments.map(
+        (department) => department.id,
+      );
+      return departmentIds.includes(value);
+    },
+    filterIcon: (filtered) => (
+      <FilterOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+    ),
     render: (_, { status, departments }) => (
       <DataGridDepartments status={status} departments={departments} />
     ),

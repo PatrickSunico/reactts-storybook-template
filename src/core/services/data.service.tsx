@@ -14,9 +14,5 @@ export const deleteData = (id: number) => {
 
 export const getDepartmentsList = async () => {
   const response = await instance.get(API_URL + "getDepartmentsList");
-  console.log(response);
-
   return response.data;
-  // const result: [] = response.data;
-  // return result;
 };

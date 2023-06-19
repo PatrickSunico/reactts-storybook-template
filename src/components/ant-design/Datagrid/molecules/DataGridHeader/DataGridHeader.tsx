@@ -6,11 +6,11 @@ import { Container } from "../../../../atoms/atomIndex";
 import { CustomPopConfirm } from "../../../CustomPopConfirm/CustomPopConfirm";
 
 // Recoil
-import { useRecoilState } from "recoil";
-import { dataGridAtomState } from "../../../core/recoil/atomState/DataGridTableState";
+// import { useRecoilState } from "recoil";
+// import { dataGridAtomState } from "../../../core/recoil/atomState/DataGridTableState";
 
 export const DataGridHeader = () => {
-  const handleDelete = () => {};
+  // const handleDelete = () => {};
   return (
     <Container className="flex flex-row justify-between px-4 py-4">
       <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">

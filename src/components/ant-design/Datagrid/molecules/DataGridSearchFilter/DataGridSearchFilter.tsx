@@ -10,10 +10,12 @@ import { FilterProps } from "../../types/DataGridTypes";
 import { Button, Container } from "../../../../atoms/atomIndex";
 
 export const DataGridSearchFilter = ({
+  selectedKeys,
   setSelectedKeys,
   confirm,
   clearFilters,
 }: FilterProps) => {
+  console.log(selectedKeys);
   const [searchText, setSearchText] = useState<string>("");
 
   const handleSearch = () => {
@@ -46,7 +48,7 @@ export const DataGridSearchFilter = ({
           Search
         </Button>
 
-        <Button variant="btn-link-default" onClick={resetSearch}>
+        <Button variant="btn-link" onClick={resetSearch}>
           Reset
         </Button>
       </Container>
