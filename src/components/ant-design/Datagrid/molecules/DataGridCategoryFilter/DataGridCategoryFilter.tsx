@@ -69,7 +69,7 @@ export const DataGridCategoryFilter = ({
           </Checkbox>
         ))}
       </Container>
-      <div
+      <Container
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -91,7 +91,7 @@ export const DataGridCategoryFilter = ({
         >
           Search
         </Button>
-      </div>
+      </Container>
     </Container>
   );
 };
