@@ -1,7 +1,7 @@
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback } from "react";
 
 // Ant Design Components
-import { Checkbox, Select } from "antd";
+import { Checkbox } from "antd";
 
 // Recoil
 import { useRecoilState } from "recoil";
@@ -10,7 +10,6 @@ import { dataGridDepartmentsState } from "../../../../../core/recoil/atomState/D
 // DataGridTypes
 import { FilterProps } from "../../types/DataGridTypes";
 
-import { FilterDropdownProps } from "antd/es/table/interface";
 // Custom Components
 import { Button, Container } from "../../../../atoms/atomIndex";
 // Service

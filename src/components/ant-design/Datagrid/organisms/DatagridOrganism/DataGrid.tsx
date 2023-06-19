@@ -1,12 +1,14 @@
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-
+// React
 import { memo } from "react";
+import { useEffect } from "react";
 
 // Ant Design
 import { Table } from "antd";
 // Services
 import { getAllData } from "../../../../../core/services/data.service";
+
+// Recoil
+import { useRecoilState } from "recoil";
 
 // Data Types
 import { ServiceType } from "../../types/DataGridTypes";

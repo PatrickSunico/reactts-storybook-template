@@ -4,6 +4,7 @@ import { rest } from "msw";
 import pendingCFS from "./json/pendingCFS.json";
 import activeCFS from "./json/activeCFS.json";
 import departmentsList from "./json/departmentsList.json";
+import groupsList from "./json//groupList.json";
 
 const getPendingCFS = rest.get("/NJM/rest/cfs/pendingCFS", (_, res, ctx) => {
   return res(ctx.json(pendingCFS));
@@ -20,5 +21,14 @@ const getDepartmentsList = rest.get(
   },
 );
 
+const getGroupsLists = rest.get("/NJM/rest/cfs/groupsList", (_, res, ctx) => {
+  return res(ctx.json(groupsList));
+});
+
 // const handleCFSOperation = rest.get(`/NJM/rest/cfs/${operation}/?respId=${id}`);
-export const handlers = [getPendingCFS, getActiveCFS, getDepartmentsList];
+export const handlers = [
+  getPendingCFS,
+  getActiveCFS,
+  getDepartmentsList,
+  getGroupsLists,
+];

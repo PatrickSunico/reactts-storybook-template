@@ -2,7 +2,7 @@
 import { DataSourceItem } from "../types/DataGridTypes";
 
 // Highlights the row if the row is either active or closed
-export const getRowClassName = (record: DataSourceItem, index: number) => {
+export const getRowClassName = (record: DataSourceItem) => {
   //   console.log(index);
   if (record.status === true) {
     return "closed-cfs";

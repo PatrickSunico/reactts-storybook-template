@@ -37,10 +37,6 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     ),
     filterIcon: (filtered) => (
       <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
-
-      // <div style={{ color: filtered ? "#1890ff" : undefined }}>
-      //   <Icon type="search-outlined" />
-      // </div>
     ),
     onFilter: (value, record) =>
       record.CFSResponderId.toString()
@@ -53,19 +49,27 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     dataIndex: "departments",
     key: "departments",
     filterDropdown: (props) => (
-      <DataGridCategoryFilter
-        setSelectedKeys={props.setSelectedKeys}
-        selectedKeys={props.selectedKeys}
-        confirm={props.confirm}
-        clearFilters={props.clearFilters}
-      />
+      console.log(props),
+      (
+        <DataGridCategoryFilter
+          setSelectedKeys={props.setSelectedKeys}
+          selectedKeys={props.selectedKeys}
+          confirm={props.confirm}
+          clearFilters={props.clearFilters}
+        />
+      )
     ),
-    // onFilter: (value, record) => record.departments.includes(value),
     onFilter: (value, record) => {
       const departmentIds = record.departments.map(
         (department) => department.id,
       );
-      return departmentIds.includes(value);
+
+      if (isNaN(Number(value))) {
+        return false;
+      }
+
+      // Convert value to number since value can be string or bool
+      return departmentIds.includes(Number(value));
     },
     filterIcon: (filtered) => (
       <FilterOutlined style={{ color: filtered ? "#1890ff" : undefined }} />

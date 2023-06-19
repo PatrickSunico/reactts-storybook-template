@@ -26,7 +26,5 @@
 }
 
 .btn-link {
-  /* @apply font-semibold text-sm text-slate-400; */
-
   @apply hover:text-slate-900 text-slate-500 font-semibold text-sm rounded shadow-sm;
 }

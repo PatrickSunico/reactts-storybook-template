@@ -16,3 +16,5 @@ export const getDepartmentsList = async () => {
   const response = await instance.get(API_URL + "getDepartmentsList");
   return response.data;
 };
+
+export const getGroups = async () => {};
