@@ -2,14 +2,22 @@
 import { ColumnType } from "antd/lib/table/interface";
 import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
 // DataGridTypes
-import { DataSourceItem } from "../types/DataGridTypes";
+import { DataSourceItem, FilterProps } from "../types/DataGridTypes";
 
 // Filter Components
 import { DataGridSearchFilter } from "../molecules/DataGridSearchFilter/DataGridSearchFilter";
 
 import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
 import { DataGridDepartments } from "../molecules/DataGridDepartments/DataGridDepartments";
-import { DataGridCategoryFilter } from "../molecules/DataGridCategoryFilter/DataGridCategoryFilter";
+
+// Filters
+import {
+  DataGridCategoryFilter,
+  DataGridFilterRenderer,
+} from "../molecules/DataGridCategoryFilter/DataGridCategoryFilter";
+
+// Data Service
+import { getDepartmentsList } from "../../../../core/services/data.service";
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -43,14 +51,21 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
-    filterDropdown: (props) => (
-      <DataGridCategoryFilter
-        setSelectedKeys={props.setSelectedKeys}
-        selectedKeys={props.selectedKeys}
-        confirm={props.confirm}
-        clearFilters={props.clearFilters}
-      />
-    ),
+    filterDropdown: (props) =>
+      DataGridFilterRenderer(props, getDepartmentsList),
+
+    // filterDropdown: (props) =>
+    //   DataGridFilterRenderer(props, getDepartmentsList),
+
+    // (
+    //   <></>
+    //   // <DataGridCategoryFilter
+    //   //   setSelectedKeys={props.setSelectedKeys}
+    //   //   selectedKeys={props.selectedKeys}
+    //   //   confirm={props.confirm}
+    //   //   clearFilters={props.clearFilters}
+    //   // />
+    // ),
     // onFilter: (value, record) => record.departments.includes(value),
     onFilter: (value, record) => {
       const departmentIds = record.departments.map(

@@ -1,5 +1,4 @@
 import React from "react";
-
 import type { ColumnFilterItem } from "antd/es/table/interface";
 
 // CFS Api Service Type
@@ -23,13 +22,18 @@ export interface Department {
   department: string;
 }
 
+export interface FilterType {
+  id: number;
+  name: string;
+}
+
 // Filter Methods
 export interface FilterProps {
   setSelectedKeys: (selectedKeys: React.Key[]) => void;
   selectedKeys: React.Key[];
   confirm: () => void;
   clearFilters?: () => void;
-  filters?: ColumnFilterItem[];
+  categoryOptions: FilterType[];
 }
 
 // Datasource Prop Destructured
