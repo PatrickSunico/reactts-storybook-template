@@ -8,35 +8,34 @@ import { useRecoilState } from "recoil";
 import { dataGridDepartmentsState } from "../../../../../core/recoil/atomState/DataGridTableState";
 
 // DataGridTypes
-import { FilterProps, FilterType } from "../../types/DataGridTypes";
+import { FilterProps } from "../../types/DataGridTypes";
 
 // Custom Components
 import { Button, Container } from "../../../../atoms/atomIndex";
 import { useFetchFilters } from "../../../../../core/hooks/useFetchFilters";
 
+// type filterRequest = getFiltersPromise: () => Promise<[]> | [];
+
 export const DataGridFilterRenderer = (
-  { selectedKeys, setSelectedKeys, confirm, clearFilters }: FilterProps,
-  getFiltersPromise: () => Promise<FilterType[]>,
+  props: FilterProps,
+  getFiltersPromise: () => Promise<[]> | [],
 ) => {
   const filters = useFetchFilters(getFiltersPromise);
 
-  return (
-    <DataGridCategoryFilter
-      categoryOptions={filters}
-      selectedKeys={selectedKeys}
-      setSelectedKeys={setSelectedKeys}
-      confirm={confirm}
-      clearFilters={clearFilters}
-    />
-  );
+  return <DataGridCategoryFilter props={props} categoryOptions={filters} />;
 };
+
+interface DataGridCategoryFilterProps {
+  props: FilterProps;
+  categoryOptions: never[];
+}
+
 export const DataGridCategoryFilter = ({
-  selectedKeys,
-  setSelectedKeys,
-  confirm,
-  clearFilters,
+  props,
   categoryOptions,
-}: FilterProps) => {
+}: DataGridCategoryFilterProps) => {
+  const { selectedKeys, setSelectedKeys, confirm, clearFilters } = props;
+
   const handleApplyFilter = () => {
     setSelectedKeys(selectedKeys);
     confirm();
@@ -57,16 +56,13 @@ export const DataGridCategoryFilter = ({
 
   return (
     <>
-      {categoryOptions.map(
-        ({ key, value }) => console.log(key, value),
-        // <Checkbox
-        //   key={id}
-        //   checked={selectedKeys.includes(id)}
-        //   onChange={(e) => handleCheckboxChange(id, e.target.checked)}
-        // >
-        //   {department}
-        // </Checkbox>
-      )}
+      {categoryOptions.map((option) => {
+        const [key1, value1] = Object.entries(option)[0];
+        const [key2, value2] = Object.entries(option)[1];
+
+        console.log(key1, value1);
+        console.log(key2, value2);
+      })}
     </>
     // <Container className="px-4 py-4">
     //   <Container className="flex flex-col justify-between">

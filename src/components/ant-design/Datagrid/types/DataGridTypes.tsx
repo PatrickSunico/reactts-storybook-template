@@ -22,10 +22,10 @@ export interface Department {
   department: string;
 }
 
-export interface FilterType {
-  id: number;
-  name: string;
-}
+// export interface FilterType {
+//   id: number;
+//   name: string;
+// }
 
 // Filter Methods
 export interface FilterProps {
@@ -33,7 +33,6 @@ export interface FilterProps {
   selectedKeys: React.Key[];
   confirm: () => void;
   clearFilters?: () => void;
-  categoryOptions: FilterType[];
 }
 
 // Datasource Prop Destructured

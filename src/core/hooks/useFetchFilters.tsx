@@ -5,11 +5,10 @@ import { dataGridFiltersState } from "../recoil/atomState/DataGridTableState";
 
 // Data Types
 import { FilterType } from "../../components/ant-design/Datagrid/types/DataGridTypes";
-import { ColumnFilterItem } from "antd/es/table/interface";
 
 export const useFetchFilters = (
   getFiltersPromise: () => Promise<FilterType[]>,
-): FilterType[] => {
+) => {
   const [filters, setFilters] = useRecoilState(dataGridFiltersState);
 
   useEffect(() => {
