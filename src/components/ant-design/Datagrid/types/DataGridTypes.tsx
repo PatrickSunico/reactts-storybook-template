@@ -1,9 +1,6 @@
 import React from "react";
 
-import type {
-  ColumnFilterItem,
-  FilterDropdownProps,
-} from "antd/es/table/interface";
+import type { ColumnFilterItem } from "antd/es/table/interface";
 
 // CFS Api Service Type
 export interface ServiceType {

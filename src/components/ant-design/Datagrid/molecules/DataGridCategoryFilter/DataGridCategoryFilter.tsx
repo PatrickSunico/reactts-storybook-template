@@ -10,7 +10,6 @@ import { dataGridDepartmentsState } from "../../../../../core/recoil/atomState/D
 // DataGridTypes
 import { FilterProps } from "../../types/DataGridTypes";
 
-import { FilterDropdownProps } from "antd/es/table/interface";
 // Custom Components
 import { Button, Container } from "../../../../atoms/atomIndex";
 // Service

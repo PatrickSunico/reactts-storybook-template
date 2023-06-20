@@ -11,10 +11,6 @@ import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
 import { DataGridDepartments } from "../molecules/DataGridDepartments/DataGridDepartments";
 import { DataGridCategoryFilter } from "../molecules/DataGridCategoryFilter/DataGridCategoryFilter";
 
-// const [departmentList, setDepartmentList] = useRecoilState(
-//   dataGridDepartmentsState,
-// );
-
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
     title: "Id",
@@ -37,17 +33,12 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     ),
     filterIcon: (filtered) => (
       <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
-
-      // <div style={{ color: filtered ? "#1890ff" : undefined }}>
-      //   <Icon type="search-outlined" />
-      // </div>
     ),
     onFilter: (value, record) =>
       record.CFSResponderId.toString()
         .toLowerCase()
         .includes(value.toString().toLowerCase()),
   },
-
   {
     title: "Departments",
     dataIndex: "departments",
@@ -65,7 +56,12 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
       const departmentIds = record.departments.map(
         (department) => department.id,
       );
-      return departmentIds.includes(value);
+
+      if (isNaN(Number(value))) {
+        return false;
+      }
+
+      return departmentIds.includes(Number(value));
     },
     filterIcon: (filtered) => (
       <FilterOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
