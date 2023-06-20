@@ -29,7 +29,7 @@ interface DataGridCategoryFilterProps {
   props: FilterProps;
   categoryOptions: never[];
 }
-
+// Git Checkpoint
 export const DataGridCategoryFilter = ({
   props,
   categoryOptions,
