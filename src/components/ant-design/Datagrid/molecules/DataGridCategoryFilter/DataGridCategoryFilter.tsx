@@ -18,87 +18,94 @@ import { useFetchFilters } from "../../../../../core/hooks/useFetchFilters";
 
 export const DataGridFilterRenderer = (
   props: FilterProps,
-  getFiltersPromise: () => Promise<[]> | [],
+  departments: string,
 ) => {
-  const filters = useFetchFilters(getFiltersPromise);
-
-  return <DataGridCategoryFilter props={props} categoryOptions={filters} />;
+  return <></>;
 };
 
-interface DataGridCategoryFilterProps {
-  props: FilterProps;
-  categoryOptions: never[];
-}
+// export const DataGridFilterRenderer = (
+//   props: FilterProps,
+//   getFiltersPromise: () => Promise<[]> | [],
+// ) => {
+//   const filters = useFetchFilters(getFiltersPromise);
 
-export const DataGridCategoryFilter = ({
-  props,
-  categoryOptions,
-}: DataGridCategoryFilterProps) => {
-  const { selectedKeys, setSelectedKeys, confirm, clearFilters } = props;
+//   return <DataGridCategoryFilter props={props} categoryOptions={filters} />;
+// };
 
-  const handleApplyFilter = () => {
-    setSelectedKeys(selectedKeys);
-    confirm();
-  };
+// interface DataGridCategoryFilterProps {
+//   props: FilterProps;
+//   categoryOptions: never[];
+// }
 
-  const handleResetFilter = useCallback(() => {
-    setSelectedKeys([]);
-    clearFilters?.();
-    confirm(); // Call confirm without any arguments to reset the filter
-  }, [clearFilters, confirm, setSelectedKeys]);
+// export const DataGridCategoryFilter = ({
+//   props,
+//   categoryOptions,
+// }: DataGridCategoryFilterProps) => {
+//   const { selectedKeys, setSelectedKeys, confirm, clearFilters } = props;
 
-  const handleCheckboxChange = (value: number, checked: boolean) => {
-    const newSelectedKeys = checked
-      ? [...selectedKeys, value]
-      : selectedKeys.filter((key) => key !== value);
-    setSelectedKeys(newSelectedKeys);
-  };
+//   const handleApplyFilter = () => {
+//     setSelectedKeys(selectedKeys);
+//     confirm();
+//   };
 
-  return (
-    <>
-      {categoryOptions.map((option) => {
-        const [key1, value1] = Object.entries(option)[0];
-        const [key2, value2] = Object.entries(option)[1];
+//   const handleResetFilter = useCallback(() => {
+//     setSelectedKeys([]);
+//     clearFilters?.();
+//     confirm(); // Call confirm without any arguments to reset the filter
+//   }, [clearFilters, confirm, setSelectedKeys]);
 
-        console.log(key1, value1);
-        console.log(key2, value2);
-      })}
-    </>
-    // <Container className="px-4 py-4">
-    //   <Container className="flex flex-col justify-between">
-    // {categoryOptions.map(({ id, department }) => (
-    //   <Checkbox
-    //     key={id}
-    //     checked={selectedKeys.includes(id)}
-    //     onChange={(e) => handleCheckboxChange(id, e.target.checked)}
-    //   >
-    //     {department}
-    //   </Checkbox>
-    // ))}
-    //   </Container>
-    //   <Container
-    //     style={{
-    //       display: "flex",
-    //       justifyContent: "space-between",
-    //       marginTop: 8,
-    //     }}
-    //   >
-    //     <Button
-    //       variant="btn-link"
-    //       className="px-2 py-1"
-    //       onClick={handleResetFilter}
-    //     >
-    //       Reset
-    //     </Button>
+//   const handleCheckboxChange = (value: number, checked: boolean) => {
+//     const newSelectedKeys = checked
+//       ? [...selectedKeys, value]
+//       : selectedKeys.filter((key) => key !== value);
+//     setSelectedKeys(newSelectedKeys);
+//   };
 
-    //     <Button
-    //       variant="btn-search-filter"
-    //       className="px-2 py-1"
-    //       onClick={handleApplyFilter}
-    //     >
-    //       Search
-    //     </Button>
-    //   </Container>
-    // </Container>
-  );
-};
+//   return (
+//     <>
+//       {categoryOptions.map((option) => {
+//         const [key1, value1] = Object.entries(option)[0];
+//         const [key2, value2] = Object.entries(option)[1];
+
+//         console.log(key1, value1);
+//         console.log(key2, value2);
+//       })}
+//     </>
+//     // <Container className="px-4 py-4">
+//     //   <Container className="flex flex-col justify-between">
+//     // {categoryOptions.map(({ id, department }) => (
+//     //   <Checkbox
+//     //     key={id}
+//     //     checked={selectedKeys.includes(id)}
+//     //     onChange={(e) => handleCheckboxChange(id, e.target.checked)}
+//     //   >
+//     //     {department}
+//     //   </Checkbox>
+//     // ))}
+//     //   </Container>
+//     //   <Container
+//     //     style={{
+//     //       display: "flex",
+//     //       justifyContent: "space-between",
+//     //       marginTop: 8,
+//     //     }}
+//     //   >
+//     //     <Button
+//     //       variant="btn-link"
+//     //       className="px-2 py-1"
+//     //       onClick={handleResetFilter}
+//     //     >
+//     //       Reset
+//     //     </Button>
+
+//     //     <Button
+//     //       variant="btn-search-filter"
+//     //       className="px-2 py-1"
+//     //       onClick={handleApplyFilter}
+//     //     >
+//     //       Search
+//     //     </Button>
+//     //   </Container>
+//     // </Container>
+//   );
+// };

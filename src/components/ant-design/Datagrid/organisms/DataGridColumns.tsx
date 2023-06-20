@@ -51,8 +51,7 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
-    filterDropdown: (props) =>
-      DataGridFilterRenderer(props, getDepartmentsList),
+    filterDropdown: (props) => DataGridFilterRenderer(props, "departments"),
 
     // filterDropdown: (props) =>
     //   DataGridFilterRenderer(props, getDepartmentsList),
