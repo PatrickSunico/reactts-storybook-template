@@ -1,5 +1,4 @@
 import React from "react";
-import type { ColumnFilterItem } from "antd/es/table/interface";
 
 // CFS Api Service Type
 export interface ServiceType {
@@ -16,10 +15,17 @@ export interface DataSourceItem {
   groups: [{ id: number; group: string }];
 }
 
+// Filter Types
+
 // Departments List
 export interface Department {
   id: number;
   department: string;
+}
+
+export interface Status {
+  id: number;
+  currentStatus: string;
 }
 
 export interface Groups {
@@ -27,20 +33,12 @@ export interface Groups {
   group: string;
 }
 
-// Filter Types
-
-export interface FilterItem<T> {
-  id: number;
-  value: T;
-}
-
 // Filter Methods
 export interface FilterProps<T> {
-  selectedKeys: React.Key[];
-  setSelectedKeys: (selectedKeys: React.Key[]) => void;
+  selectedKeys: T[];
+  setSelectedKeys: (selectedKeys: T[]) => void;
   confirm: () => void;
   clearFilters?: () => void;
-  filters: FilterItem<T>[];
 }
 
 // Datasource Prop Destructured

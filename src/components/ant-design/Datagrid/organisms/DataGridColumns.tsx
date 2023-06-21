@@ -4,23 +4,19 @@ import React from "react";
 import { ColumnType } from "antd/lib/table/interface";
 import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
 // DataGridTypes
-import { DataSourceItem, FilterProps } from "../types/DataGridTypes";
+import { DataSourceItem } from "../types/DataGridTypes";
 
 // Filter Components
-import { DataGridSearchFilter } from "../molecules/DataGridSearchFilter/DataGridSearchFilter";
+import { DataGridSearchFilter } from "../molecules/Filters/DataGridSearchFilter/DataGridSearchFilter";
 
 import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
 import { DataGridDepartments } from "../molecules/DataGridDepartments/DataGridDepartments";
 
 // Filters
-import {
-  DataGridCategoryFilter,
-  DataGridFilterRenderer,
-} from "../molecules/DataGridCategoryFilter/DataGridCategoryFilter";
+import { DataGridDepartmentsFilter } from "../molecules/Filters/DataGridDepartmentsFilter/DataGridDepartmentsFilter";
+import { DataGridStatusFilter } from "../molecules/Filters/DataGridStatusFilter/DataGridDepartmentStatusFilter";
 
 // Data Service
-import { getDepartmentsList } from "../../../../core/services/data.service";
-import { FilterDropdownProps } from "antd/es/table/interface";
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -54,23 +50,14 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
-    filterDropdown: (props: FilterDropdownProps) =>
-      DataGridFilterRenderer<number>(props),
-    // filterDropdown: (props: FilterProps, key: string) => DataGridFilterRenderer(props, key),
-
-    // filterDropdown: (props) =>
-    //   DataGridFilterRenderer(props, getDepartmentsList),
-
-    // (
-    //   <></>
-    //   // <DataGridCategoryFilter
-    //   //   setSelectedKeys={props.setSelectedKeys}
-    //   //   selectedKeys={props.selectedKeys}
-    //   //   confirm={props.confirm}
-    //   //   clearFilters={props.clearFilters}
-    //   // />
-    // ),
-    // onFilter: (value, record) => record.departments.includes(value),
+    filterDropdown: (props) => (
+      <DataGridDepartmentsFilter
+        setSelectedKeys={props.setSelectedKeys}
+        selectedKeys={props.selectedKeys}
+        confirm={props.confirm}
+        clearFilters={props.clearFilters}
+      />
+    ),
     onFilter: (value, record) => {
       const departmentIds = record.departments.map(
         (department) => department.id,
@@ -93,20 +80,31 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Status",
     dataIndex: "status",
     key: "status",
+    filterDropdown: (props) => (
+      <DataGridStatusFilter
+        setSelectedKeys={props.setSelectedKeys}
+        selectedKeys={props.selectedKeys}
+        confirm={props.confirm}
+        clearFilters={props.clearFilters}
+      />
+    ),
     shouldCellUpdate: (record, prevRecord) => {
       // Deep Compare
       const rowContentNotChanged =
         JSON.stringify(record) === JSON.stringify(prevRecord);
       return rowContentNotChanged ? false : true;
     },
+    filterIcon: (filtered) => (
+      <FilterOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+    ),
     render: (status: boolean) => (status ? "Closed" : "Active"),
   },
-  {
-    title: "Group",
-    dataIndex: "group",
-    key: "group",
-    // render: (_, groups) => groups,
-  },
+  // {
+  //   title: "Group",
+  //   dataIndex: "group",
+  //   key: "group",
+  //   // render: (_, groups) => groups,
+  // },
   {
     title: "Action",
     dataIndex: "action",
@@ -121,5 +119,4 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
       />
     ),
   },
-  // Additional columns...
 ];

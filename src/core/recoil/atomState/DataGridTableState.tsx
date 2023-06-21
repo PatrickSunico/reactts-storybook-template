@@ -13,9 +13,3 @@ export const dataGridDepartmentsState = atom<Array<Department>>({
   key: "departmentsList",
   default: [],
 });
-
-export const dataGridFiltersState = atom({
-  key: "filterList",
-  default: [],
-});
-// export const dataGridStatusState = atom <Array><
