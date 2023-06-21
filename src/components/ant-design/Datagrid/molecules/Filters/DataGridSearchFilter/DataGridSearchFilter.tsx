@@ -14,12 +14,12 @@ export const DataGridSearchFilter = ({
   setSelectedKeys,
   confirm,
   clearFilters,
-}: FilterProps<string>) => {
-  console.log(selectedKeys);
+}: FilterProps) => {
   const [searchText, setSearchText] = useState<string>("");
 
   const handleSearch = () => {
     setSelectedKeys(searchText ? [searchText] : []);
+    console.log(searchText ? [searchText] : []);
     confirm();
   };
 

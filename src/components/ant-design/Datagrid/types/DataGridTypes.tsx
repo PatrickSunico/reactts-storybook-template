@@ -34,9 +34,9 @@ export interface Groups {
 }
 
 // Filter Methods
-export interface FilterProps<T> {
-  selectedKeys: T[];
-  setSelectedKeys: (selectedKeys: T[]) => void;
+export interface FilterProps {
+  selectedKeys: React.Key[];
+  setSelectedKeys: (selectedKeys: React.Key[]) => void;
   confirm: () => void;
   clearFilters?: () => void;
 }

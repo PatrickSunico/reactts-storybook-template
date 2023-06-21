@@ -1,18 +1,7 @@
-<<<<<<< HEAD:src/components/ant-design/Datagrid/molecules/DataGridCategoryFilter/DataGridCategoryFilter.tsx
-import { useEffect, useCallback } from "react";
-
-// Ant Design Components
-import { Checkbox } from "antd";
-
-// Recoil
-import { useRecoilState } from "recoil";
-import { dataGridDepartmentsState } from "../../../../../core/recoil/atomState/DataGridTableState";
-=======
 import { useCallback } from "react";
 
 // Ant Design Components
 import { Checkbox } from "antd";
->>>>>>> 40e1311f8c8f3ea79f39bda5d6913e0307cf11cf:src/components/ant-design/Datagrid/molecules/Filters/DataGridDepartmentsFilter/DataGridDepartmentsFilter.tsx
 
 // DataGridTypes
 import { FilterProps } from "../../../types/DataGridTypes";
@@ -21,7 +10,7 @@ import { FilterProps } from "../../../types/DataGridTypes";
 import { Button, Container } from "../../../../../atoms/atomIndex";
 import { useDepartmentsFilter } from "../../../../../../core/hooks/useDepartmentsFilters";
 
-export const DataGridDepartmentsFilter = (props: FilterProps<number>) => {
+export const DataGridDepartmentsFilter = (props: FilterProps) => {
   const { selectedKeys, setSelectedKeys, confirm, clearFilters } = props;
 
   const departmentFilters = useDepartmentsFilter();

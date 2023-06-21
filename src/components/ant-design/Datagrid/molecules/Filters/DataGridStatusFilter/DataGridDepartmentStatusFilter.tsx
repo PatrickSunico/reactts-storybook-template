@@ -9,41 +9,49 @@ import { FilterProps } from "../../../types/DataGridTypes";
 // Custom Components
 import { Button, Container } from "../../../../../atoms/atomIndex";
 
-export const DataGridStatusFilter = (props: FilterProps<boolean>) => {
-  const { selectedKeys, setSelectedKeys, confirm, clearFilters } = props;
-
-  const handleApplyFilter = () => {
-    setSelectedKeys(selectedKeys);
+export const DataGridStatusFilter: React.FC<FilterProps> = ({
+  selectedKeys,
+  setSelectedKeys,
+  confirm,
+  clearFilters,
+}) => {
+  const handleApplyFilter = useCallback(() => {
     confirm();
-  };
+  }, [confirm]);
+
   const handleResetFilter = useCallback(() => {
     setSelectedKeys([]);
     clearFilters?.();
     confirm(); // Call confirm without any arguments to reset the filter
   }, [clearFilters, confirm, setSelectedKeys]);
 
-  const handleCheckboxChange = (value: boolean, checked: boolean) => {
-    if (checked) {
-      setSelectedKeys([value]);
-    } else {
-      setSelectedKeys([]);
-    }
-  };
+  const handleCheckboxChange = useCallback(
+    (value: boolean, checked: boolean) => {
+      if (checked) {
+        setSelectedKeys([value.toString()]);
+
+        console.log([value.toString()]);
+      } else {
+        setSelectedKeys([]);
+      }
+    },
+    [setSelectedKeys],
+  );
 
   return (
     <Container className="px-4 py-4">
       <Container className="flex flex-col justify-between">
         <Checkbox
-          checked={selectedKeys.includes(true)}
+          checked={selectedKeys.includes("true")}
           onChange={(e) => handleCheckboxChange(true, e.target.checked)}
         >
           Active
         </Checkbox>
         <Checkbox
-          checked={selectedKeys.includes(false)}
+          checked={selectedKeys.includes("false")}
           onChange={(e) => handleCheckboxChange(false, e.target.checked)}
         >
-          Close
+          Closed
         </Checkbox>
       </Container>
       <Container

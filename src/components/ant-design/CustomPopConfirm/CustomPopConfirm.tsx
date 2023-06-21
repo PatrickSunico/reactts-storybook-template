@@ -66,11 +66,7 @@ export const CustomPopConfirm = memo(
         disabled={disabled}
         okButtonProps={{ className: "pop-confirm-button", danger, disabled }}
       >
-<<<<<<< HEAD
-        <Button type={type} className="px-2 btn-danger" danger={danger}>
-=======
         <Button type={type} danger={danger} disabled={disabled}>
->>>>>>> 40e1311f8c8f3ea79f39bda5d6913e0307cf11cf
           {buttonMsg}
         </Button>
       </Popconfirm>
