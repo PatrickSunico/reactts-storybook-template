@@ -1,3 +1,5 @@
+import React from "react";
+
 // Ant Design
 import { ColumnType } from "antd/lib/table/interface";
 import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
@@ -5,15 +7,16 @@ import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
 import { DataSourceItem } from "../types/DataGridTypes";
 
 // Filter Components
-import { DataGridSearchFilter } from "../molecules/DataGridSearchFilter/DataGridSearchFilter";
+import { DataGridSearchFilter } from "../molecules/Filters/DataGridSearchFilter/DataGridSearchFilter";
 
 import { CustomPopConfirm } from "../../CustomPopConfirm/CustomPopConfirm";
 import { DataGridDepartments } from "../molecules/DataGridDepartments/DataGridDepartments";
-import { DataGridCategoryFilter } from "../molecules/DataGridCategoryFilter/DataGridCategoryFilter";
 
-// const [departmentList, setDepartmentList] = useRecoilState(
-//   dataGridDepartmentsState,
-// );
+// Filters
+import { DataGridDepartmentsFilter } from "../molecules/Filters/DataGridDepartmentsFilter/DataGridDepartmentsFilter";
+import { DataGridStatusFilter } from "../molecules/Filters/DataGridStatusFilter/DataGridDepartmentStatusFilter";
+
+// Data Service
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -43,12 +46,12 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
         .toLowerCase()
         .includes(value.toString().toLowerCase()),
   },
-
   {
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
     filterDropdown: (props) => (
+<<<<<<< HEAD
       console.log(props),
       (
         <DataGridCategoryFilter
@@ -58,6 +61,14 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
           clearFilters={props.clearFilters}
         />
       )
+=======
+      <DataGridDepartmentsFilter
+        setSelectedKeys={props.setSelectedKeys}
+        selectedKeys={props.selectedKeys}
+        confirm={props.confirm}
+        clearFilters={props.clearFilters}
+      />
+>>>>>>> 40e1311f8c8f3ea79f39bda5d6913e0307cf11cf
     ),
     onFilter: (value, record) => {
       const departmentIds = record.departments.map(
@@ -68,7 +79,10 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
         return false;
       }
 
+<<<<<<< HEAD
       // Convert value to number since value can be string or bool
+=======
+>>>>>>> 40e1311f8c8f3ea79f39bda5d6913e0307cf11cf
       return departmentIds.includes(Number(value));
     },
     filterIcon: (filtered) => (
@@ -82,20 +96,31 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Status",
     dataIndex: "status",
     key: "status",
+    filterDropdown: (props) => (
+      <DataGridStatusFilter
+        setSelectedKeys={props.setSelectedKeys}
+        selectedKeys={props.selectedKeys}
+        confirm={props.confirm}
+        clearFilters={props.clearFilters}
+      />
+    ),
     shouldCellUpdate: (record, prevRecord) => {
       // Deep Compare
       const rowContentNotChanged =
         JSON.stringify(record) === JSON.stringify(prevRecord);
       return rowContentNotChanged ? false : true;
     },
+    filterIcon: (filtered) => (
+      <FilterOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+    ),
     render: (status: boolean) => (status ? "Closed" : "Active"),
   },
-  {
-    title: "Group",
-    dataIndex: "group",
-    key: "group",
-    // render: (_, groups) => groups,
-  },
+  // {
+  //   title: "Group",
+  //   dataIndex: "group",
+  //   key: "group",
+  //   // render: (_, groups) => groups,
+  // },
   {
     title: "Action",
     dataIndex: "action",
@@ -110,5 +135,4 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
       />
     ),
   },
-  // Additional columns...
 ];

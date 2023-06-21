@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/components/ant-design/Datagrid/molecules/DataGridCategoryFilter/DataGridCategoryFilter.tsx
 import { useEffect, useCallback } from "react";
 
 // Ant Design Components
@@ -6,36 +7,24 @@ import { Checkbox } from "antd";
 // Recoil
 import { useRecoilState } from "recoil";
 import { dataGridDepartmentsState } from "../../../../../core/recoil/atomState/DataGridTableState";
+=======
+import { useCallback } from "react";
+
+// Ant Design Components
+import { Checkbox } from "antd";
+>>>>>>> 40e1311f8c8f3ea79f39bda5d6913e0307cf11cf:src/components/ant-design/Datagrid/molecules/Filters/DataGridDepartmentsFilter/DataGridDepartmentsFilter.tsx
 
 // DataGridTypes
-import { FilterProps } from "../../types/DataGridTypes";
+import { FilterProps } from "../../../types/DataGridTypes";
 
 // Custom Components
-import { Button, Container } from "../../../../atoms/atomIndex";
-// Service
-import { getDepartmentsList } from "../../../../../core/services/data.service";
+import { Button, Container } from "../../../../../atoms/atomIndex";
+import { useDepartmentsFilter } from "../../../../../../core/hooks/useDepartmentsFilters";
 
-export const DataGridCategoryFilter = ({
-  selectedKeys,
-  setSelectedKeys,
-  confirm,
-  clearFilters,
-}: FilterProps) => {
-  const [departmentList, setDepartmentList] = useRecoilState(
-    dataGridDepartmentsState,
-  );
+export const DataGridDepartmentsFilter = (props: FilterProps<number>) => {
+  const { selectedKeys, setSelectedKeys, confirm, clearFilters } = props;
 
-  useEffect(() => {
-    const fetchDepartments = async () => {
-      try {
-        const response = await getDepartmentsList();
-        setDepartmentList(response);
-      } catch (error) {
-        console.log("Error", error);
-      }
-    };
-    fetchDepartments();
-  }, [setDepartmentList]);
+  const departmentFilters = useDepartmentsFilter();
 
   const handleApplyFilter = () => {
     setSelectedKeys(selectedKeys);
@@ -58,7 +47,7 @@ export const DataGridCategoryFilter = ({
   return (
     <Container className="px-4 py-4">
       <Container className="flex flex-col justify-between">
-        {departmentList.map(({ id, department }) => (
+        {departmentFilters.map(({ id, department }) => (
           <Checkbox
             key={id}
             checked={selectedKeys.includes(id)}

@@ -1,10 +1,5 @@
 import React from "react";
 
-import type {
-  ColumnFilterItem,
-  FilterDropdownProps,
-} from "antd/es/table/interface";
-
 // CFS Api Service Type
 export interface ServiceType {
   cfsType: string;
@@ -20,19 +15,30 @@ export interface DataSourceItem {
   groups: [{ id: number; group: string }];
 }
 
+// Filter Types
+
 // Departments List
 export interface Department {
   id: number;
   department: string;
 }
 
+export interface Status {
+  id: number;
+  currentStatus: string;
+}
+
+export interface Groups {
+  id: number;
+  group: string;
+}
+
 // Filter Methods
-export interface FilterProps {
-  setSelectedKeys: (selectedKeys: React.Key[]) => void;
-  selectedKeys: React.Key[];
+export interface FilterProps<T> {
+  selectedKeys: T[];
+  setSelectedKeys: (selectedKeys: T[]) => void;
   confirm: () => void;
   clearFilters?: () => void;
-  filters?: ColumnFilterItem[];
 }
 
 // Datasource Prop Destructured

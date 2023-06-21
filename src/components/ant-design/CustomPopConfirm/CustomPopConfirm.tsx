@@ -1,5 +1,5 @@
 // React Libraries
-import { memo } from "react";
+import { memo, useState } from "react";
 
 // Ant Design Components
 import { Popconfirm } from "antd";
@@ -27,8 +27,16 @@ interface CustomPopConfirmType extends ButtonProps {
 
 export const CustomPopConfirm = memo(
   ({ title, record, buttonMsg, danger, type }: CustomPopConfirmType) => {
+    // console.log(record?.status);
+
+    const [disabled, setDisabled] = useState(record?.status);
     const [dataSource, setDataSource] = useRecoilState(dataGridAtomState);
+
+    // Popconfirm
     const handleAction = (record?: DataSourceItem) => {
+      if (disabled) {
+        return;
+      }
       /**
        * Updates the CloseCFS Status instead
        */
@@ -40,6 +48,8 @@ export const CustomPopConfirm = memo(
       });
 
       setDataSource(updatedStatus);
+      setDisabled(true);
+
       /**
        * Delete Row Method
        */
@@ -53,9 +63,14 @@ export const CustomPopConfirm = memo(
       <Popconfirm
         title={title}
         onConfirm={() => handleAction(record)}
-        okButtonProps={{ className: "pop-confirm-button", danger }}
+        disabled={disabled}
+        okButtonProps={{ className: "pop-confirm-button", danger, disabled }}
       >
+<<<<<<< HEAD
         <Button type={type} className="px-2 btn-danger" danger={danger}>
+=======
+        <Button type={type} danger={danger} disabled={disabled}>
+>>>>>>> 40e1311f8c8f3ea79f39bda5d6913e0307cf11cf
           {buttonMsg}
         </Button>
       </Popconfirm>
