@@ -22,17 +22,25 @@ export interface Department {
   department: string;
 }
 
-// export interface FilterType {
-//   id: number;
-//   name: string;
-// }
+export interface Groups {
+  id: number;
+  group: string;
+}
+
+// Filter Types
+
+export interface FilterItem<T> {
+  id: number;
+  value: T;
+}
 
 // Filter Methods
-export interface FilterProps {
-  setSelectedKeys: (selectedKeys: React.Key[]) => void;
+export interface FilterProps<T> {
   selectedKeys: React.Key[];
+  setSelectedKeys: (selectedKeys: React.Key[]) => void;
   confirm: () => void;
   clearFilters?: () => void;
+  filters: FilterItem<T>[];
 }
 
 // Datasource Prop Destructured

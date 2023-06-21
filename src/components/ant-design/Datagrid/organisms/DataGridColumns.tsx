@@ -1,3 +1,5 @@
+import React from "react";
+
 // Ant Design
 import { ColumnType } from "antd/lib/table/interface";
 import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
@@ -18,6 +20,7 @@ import {
 
 // Data Service
 import { getDepartmentsList } from "../../../../core/services/data.service";
+import { FilterDropdownProps } from "antd/es/table/interface";
 
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
@@ -51,7 +54,9 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
     title: "Departments",
     dataIndex: "departments",
     key: "departments",
-    filterDropdown: (props) => DataGridFilterRenderer(props, "departments"),
+    filterDropdown: (props: FilterDropdownProps) =>
+      DataGridFilterRenderer<number>(props),
+    // filterDropdown: (props: FilterProps, key: string) => DataGridFilterRenderer(props, key),
 
     // filterDropdown: (props) =>
     //   DataGridFilterRenderer(props, getDepartmentsList),
