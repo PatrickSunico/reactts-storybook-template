@@ -2,7 +2,7 @@ import "./App.css";
 import "antd/dist/reset.css";
 
 // Atoms
-import { MainParent, Container, Button } from "./components/atoms/atomIndex";
+import { MainParent, Container } from "./components/atoms/atomIndex";
 import { DataGrid } from "./components/ant-design/Datagrid/organisms/DatagridOrganism/DataGrid";
 import { DataGridHeader } from "./components/ant-design/Datagrid/molecules/DataGridHeader/DataGridHeader";
 

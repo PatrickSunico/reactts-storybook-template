@@ -1,28 +1,19 @@
 import { useEffect, useState, useRef } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import DataService from "../../../core/services/data.service";
-import { TableOrganism } from "../../organisms/organismIndex";
+import { useRecoilState } from "recoil";
 // Recoil
-import {
-  tableAtomState,
-  tableColumnAtomState,
-} from "../../../core/recoil/atomState/tableState";
+import { tableAtomState } from "../../../core/recoil/atomState/tableState";
 
 import { Button } from "../../atoms/atomIndex";
 
 import { Tag } from "antd";
 
 // Types
-import { ServiceType, TableColumnProps } from "../../../types/Table/TableTypes";
+import { ServiceType } from "../../../types/Table/TableTypes";
 import { TableDataProps } from "../../../types/Table/TableTypes";
 // import { columnsState } from "../POCTable/SearchPOCTable";
 // import { TableColumnProps } from "antd";
-import type { ColumnType, ColumnsType } from "antd/es/table";
-import type {
-  FilterConfirmProps,
-  FilterDropdownProps,
-} from "antd/es/table/interface";
-import Highlighter from "react-highlight-words";
+import type { ColumnsType } from "antd/es/table";
+import type { FilterDropdownProps } from "antd/es/table/interface";
 
 export interface FilterMethods extends FilterDropdownProps {
   setSelectedKeys: (e: React.Key[]) => void;

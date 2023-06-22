@@ -6,7 +6,6 @@ interface DataGridDepartmentsProps {
 }
 
 export const DataGridDepartments = ({
-  status,
   departments,
 }: DataGridDepartmentsProps) => {
   return departments.map(({ id, department }) => {
@@ -41,6 +40,4 @@ export const DataGridDepartments = ({
       </Tag>
     );
   });
-
-  //   return <>{renderDepartments}</>;
 };

@@ -15,7 +15,6 @@ import { DataGridStatusFilter } from "../molecules/Filters/DataGridStatusFilter/
 import { Badge } from "antd";
 
 // Data Service
-
 export const DataGridColumns: ColumnType<DataSourceItem>[] = [
   {
     title: "Id",
@@ -87,8 +86,14 @@ export const DataGridColumns: ColumnType<DataSourceItem>[] = [
       />
     ),
     onFilter: (value, record) => {
-      const status = !record.status ? "true" : "false";
-      return value.toString() === status;
+      switch (value) {
+        case "active":
+          return record.status === false;
+        case "closed":
+          return record.status === true;
+        default:
+          return true;
+      }
     },
     shouldCellUpdate: (record, prevRecord) => {
       // Deep Compare

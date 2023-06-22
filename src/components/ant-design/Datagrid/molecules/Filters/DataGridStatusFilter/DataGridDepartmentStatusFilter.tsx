@@ -1,5 +1,3 @@
-import { useCallback } from "react";
-
 // Ant Design Components
 import { Checkbox } from "antd";
 
@@ -9,49 +7,45 @@ import { FilterProps } from "../../../types/DataGridTypes";
 // Custom Components
 import { Button, Container } from "../../../../../atoms/atomIndex";
 
-export const DataGridStatusFilter: React.FC<FilterProps> = ({
+export const DataGridStatusFilter = ({
   selectedKeys,
   setSelectedKeys,
   confirm,
   clearFilters,
-}) => {
-  const handleApplyFilter = useCallback(() => {
-    confirm();
-  }, [confirm]);
+}: FilterProps) => {
+  const handleCheckboxChange = (value: string) => {
+    setSelectedKeys([value]);
+  };
 
-  const handleResetFilter = useCallback(() => {
+  const handleApplyFilter = () => {
+    confirm();
+  };
+
+  const handleResetFilter = () => {
     setSelectedKeys([]);
     clearFilters?.();
-    confirm(); // Call confirm without any arguments to reset the filter
-  }, [clearFilters, confirm, setSelectedKeys]);
-
-  const handleCheckboxChange = useCallback(
-    (value: boolean, checked: boolean) => {
-      if (checked) {
-        setSelectedKeys([value.toString()]);
-
-        console.log([value.toString()]);
-      } else {
-        setSelectedKeys([]);
-      }
-    },
-    [setSelectedKeys],
-  );
+  };
 
   return (
     <Container className="px-4 py-4">
       <Container className="flex flex-col justify-between">
         <Checkbox
-          checked={selectedKeys.includes("true")}
-          onChange={(e) => handleCheckboxChange(true, e.target.checked)}
+          checked={selectedKeys.includes("active")}
+          onChange={() => handleCheckboxChange("active")}
         >
           Active
         </Checkbox>
         <Checkbox
-          checked={selectedKeys.includes("false")}
-          onChange={(e) => handleCheckboxChange(false, e.target.checked)}
+          checked={selectedKeys.includes("closed")}
+          onChange={() => handleCheckboxChange("closed")}
         >
           Closed
+        </Checkbox>
+        <Checkbox
+          checked={selectedKeys.includes("all")}
+          onChange={() => handleCheckboxChange("all")}
+        >
+          All
         </Checkbox>
       </Container>
       <Container
