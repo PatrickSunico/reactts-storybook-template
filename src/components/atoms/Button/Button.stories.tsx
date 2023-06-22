@@ -16,9 +16,11 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 // Component Builder
+
 export const Primary: Story = {
   args: {
     variant: "btn-primary",
+    size: "xs",
   },
 };
 
@@ -34,18 +36,28 @@ export const Tertiary: Story = {
   },
 };
 
+export const SearchFilterButton: Story = {
+  args: {
+    variant: "btn-search-filter",
+  },
+};
+
 export const GroupedButtons: Story = {
   // render() - to Render as JSX
   render: () => (
     <div className="flex flex-col px-2 py-2">
-      <Button variant="btn-primary" className="my-2 me-2">
+      <Button variant="btn-primary" size="lg" className="my-2 me-2">
         Primary
       </Button>
-      <Button variant="btn-secondary" className="my-2 me-2">
+      <Button variant="btn-secondary" size="lg" className="my-2 me-2">
         Secondary
       </Button>
-      <Button variant="btn-tertiary" className="my-2 me-2">
+      <Button variant="btn-tertiary" size="lg" className="my-2 me-2">
         Tertiary
+      </Button>
+
+      <Button variant="btn-search-filter" size="xs" className="my-2 me-2">
+        Search Filter
       </Button>
     </div>
   ),

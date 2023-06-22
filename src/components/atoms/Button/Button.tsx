@@ -4,12 +4,7 @@ import "./Button.css";
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
-  variant:
-    | "btn-primary"
-    | "btn-secondary"
-    | "btn-tertiary"
-    | "btn-danger"
-    | "btn-accept";
+  variant?: string;
   backgroundColor?: string;
   onClick?: () => void;
 }
@@ -22,7 +17,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const styles = [className, variant].join(" ");
-  // const styles = `${variant} ${className ? className : ""}`;
+
   return (
     <button {...props} className={styles} style={{ backgroundColor }}>
       {children}

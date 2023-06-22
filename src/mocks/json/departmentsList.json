@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "department": "System Admins"
+    },
+    {
+        "id": 2,
+        "department": "EMS"
+    },
+    {
+        "id": 3,
+        "department": "Traffic Police"
+    },
+    {
+        "id": 4,
+        "department": "Civil Defense"
+    },
+    {
+        "id": 5,
+        "department": "Fazaa"
+    },
+    {
+        "id": 6,
+        "department": "Central Operations"
+    }
+]

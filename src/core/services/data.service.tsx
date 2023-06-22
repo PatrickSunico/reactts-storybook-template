@@ -1,25 +1,22 @@
-// import authHeader from "../core/auth/authHeader";
-import { formatDataToObject } from "../utils/dataMapper";
-import { TableDataProps } from "../../components/organisms/TableOrganism/TableOrganism";
-
 import instance from "../../core/services/axios";
 
 const API_URL = "/NJM/rest/cfs/";
 
+// Store fetched data into state
+
 export const getAllData = async (cfsType: string) => {
   const response = await instance.get(`${API_URL}${cfsType}`);
   const result: [] = response.data;
-  // const formattedArray: TableDataProps[] = formatDataToObject(result);
   return result;
 };
 
-const deleteData = (id: number) => {
+export const deleteData = (id: number) => {
   return instance.delete(API_URL + `${id}`);
 };
 
-const DataService = {
-  getAllData,
-  deleteData,
+export const getDepartmentsList = async () => {
+  const response = await instance.get(API_URL + "getDepartmentsList");
+  return response.data;
 };
 
-export default DataService;
+export const getGroups = async () => {};

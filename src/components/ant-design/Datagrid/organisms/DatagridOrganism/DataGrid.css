@@ -1,0 +1,8 @@
+.active-cfs:hover td {
+  /* @apply bg-zinc-500 !important; */
+  /* @apply background: bg-zinc-300 !important; */
+  @apply bg-zinc-100/30 !important;
+}
+.closed-cfs td {
+  @apply bg-zinc-100 !important;
+}

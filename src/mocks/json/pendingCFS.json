@@ -4,132 +4,3599 @@
         "id": 1,
         "status": false,
         "departments": [
-            "Fazaa",
-            "EMS",
-            "Traffic Police"
+            {
+                "id": 2,
+                "department": "EMS"
+            }
         ],
-        "CFSResponderId": 28608818
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 4449005
     },
     {
         "key": 2,
         "id": 2,
         "status": false,
         "departments": [
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
         ],
-        "CFSResponderId": 28608819
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 32462891
     },
     {
         "key": 3,
         "id": 3,
         "status": false,
         "departments": [
-            "Fazaa",
-            "EMS",
-            "Traffic Police",
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
         ],
-        "CFSResponderId": 28608700
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 64890823
     },
     {
         "key": 4,
         "id": 4,
         "status": false,
         "departments": [
-            "Fazaa",
-            "EMS",
-            "Traffic Police",
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 2,
+                "department": "EMS"
+            }
         ],
-        "CFSResponderId": 28608200
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 56866081
     },
     {
         "key": 5,
         "id": 5,
         "status": false,
         "departments": [
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
         ],
-        "CFSResponderId": 28608201
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 99579142
     },
     {
         "key": 6,
         "id": 6,
         "status": false,
         "departments": [
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
         ],
-        "CFSResponderId": 28608650
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 678783
     },
     {
         "key": 7,
         "id": 7,
         "status": false,
         "departments": [
-            "Fazaa",
-            "EMS",
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 2,
+                "department": "EMS"
+            }
         ],
-        "CFSResponderId": 28608651
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 75031557
     },
     {
         "key": 8,
         "id": 8,
         "status": false,
         "departments": [
-            "Fazaa",
-            "EMS",
-            "Traffic Police",
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
         ],
-        "CFSResponderId": 28608944
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 32422400
     },
     {
         "key": 9,
         "id": 9,
         "status": false,
         "departments": [
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 2,
+                "department": "EMS"
+            }
         ],
-        "CFSResponderId": 28609152
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 5588018
     },
     {
         "key": 10,
         "id": 10,
         "status": false,
         "departments": [
-            "Traffic Police",
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 2,
+                "department": "EMS"
+            }
         ],
-        "CFSResponderId": 28608866
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 72306062
     },
     {
         "key": 11,
         "id": 11,
         "status": false,
         "departments": [
-            "Traffic Police",
-            "Lekhwiya",
-            "ISF"
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
         ],
-        "CFSResponderId": 28608867
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 59911942
     },
     {
         "key": 12,
         "id": 12,
         "status": false,
         "departments": [
-            "EMS"
+            {
+                "id": 2,
+                "department": "EMS"
+            }
         ],
-        "CFSResponderId": 28608868
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 40600725
+    },
+    {
+        "key": 13,
+        "id": 13,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 21048540
+    },
+    {
+        "key": 14,
+        "id": 14,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 23243954
+    },
+    {
+        "key": 15,
+        "id": 15,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 84375130
+    },
+    {
+        "key": 16,
+        "id": 16,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 72726901
+    },
+    {
+        "key": 17,
+        "id": 17,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 5255051
+    },
+    {
+        "key": 18,
+        "id": 18,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 55317562
+    },
+    {
+        "key": 19,
+        "id": 19,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 92525581
+    },
+    {
+        "key": 20,
+        "id": 20,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 44973998
+    },
+    {
+        "key": 21,
+        "id": 21,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 77025454
+    },
+    {
+        "key": 22,
+        "id": 22,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 76490424
+    },
+    {
+        "key": 23,
+        "id": 23,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 20497743
+    },
+    {
+        "key": 24,
+        "id": 24,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 57749977
+    },
+    {
+        "key": 25,
+        "id": 25,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 68045553
+    },
+    {
+        "key": 26,
+        "id": 26,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 17526119
+    },
+    {
+        "key": 27,
+        "id": 27,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 54288015
+    },
+    {
+        "key": 28,
+        "id": 28,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 7825698
+    },
+    {
+        "key": 29,
+        "id": 29,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 2727491
+    },
+    {
+        "key": 30,
+        "id": 30,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 33647158
+    },
+    {
+        "key": 31,
+        "id": 31,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 37891299
+    },
+    {
+        "key": 32,
+        "id": 32,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 59027609
+    },
+    {
+        "key": 33,
+        "id": 33,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 30929623
+    },
+    {
+        "key": 34,
+        "id": 34,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 513493
+    },
+    {
+        "key": 35,
+        "id": 35,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 78877236
+    },
+    {
+        "key": 36,
+        "id": 36,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 57247659
+    },
+    {
+        "key": 37,
+        "id": 37,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 49123207
+    },
+    {
+        "key": 38,
+        "id": 38,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 5144173
+    },
+    {
+        "key": 39,
+        "id": 39,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 56510432
+    },
+    {
+        "key": 40,
+        "id": 40,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 52821011
+    },
+    {
+        "key": 41,
+        "id": 41,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 76509370
+    },
+    {
+        "key": 42,
+        "id": 42,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 77494754
+    },
+    {
+        "key": 43,
+        "id": 43,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 50272042
+    },
+    {
+        "key": 44,
+        "id": 44,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 75803787
+    },
+    {
+        "key": 45,
+        "id": 45,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 44543927
+    },
+    {
+        "key": 46,
+        "id": 46,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 67542877
+    },
+    {
+        "key": 47,
+        "id": 47,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 28052588
+    },
+    {
+        "key": 48,
+        "id": 48,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 81942534
+    },
+    {
+        "key": 49,
+        "id": 49,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 83205993
+    },
+    {
+        "key": 50,
+        "id": 50,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 80537357
+    },
+    {
+        "key": 51,
+        "id": 51,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 1002724
+    },
+    {
+        "key": 52,
+        "id": 52,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 40677088
+    },
+    {
+        "key": 53,
+        "id": 53,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 18188529
+    },
+    {
+        "key": 54,
+        "id": 54,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 70619295
+    },
+    {
+        "key": 55,
+        "id": 55,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 74406980
+    },
+    {
+        "key": 56,
+        "id": 56,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 52699858
+    },
+    {
+        "key": 57,
+        "id": 57,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 76563856
+    },
+    {
+        "key": 58,
+        "id": 58,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 70019033
+    },
+    {
+        "key": 59,
+        "id": 59,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 75455253
+    },
+    {
+        "key": 60,
+        "id": 60,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 13538185
+    },
+    {
+        "key": 61,
+        "id": 61,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 58085910
+    },
+    {
+        "key": 62,
+        "id": 62,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 16580438
+    },
+    {
+        "key": 63,
+        "id": 63,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 97869947
+    },
+    {
+        "key": 64,
+        "id": 64,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 38833312
+    },
+    {
+        "key": 65,
+        "id": 65,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 35184597
+    },
+    {
+        "key": 66,
+        "id": 66,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 5009417
+    },
+    {
+        "key": 67,
+        "id": 67,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 12688356
+    },
+    {
+        "key": 68,
+        "id": 68,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 53631889
+    },
+    {
+        "key": 69,
+        "id": 69,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 95754222
+    },
+    {
+        "key": 70,
+        "id": 70,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 95517666
+    },
+    {
+        "key": 71,
+        "id": 71,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 2422584
+    },
+    {
+        "key": 72,
+        "id": 72,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 68572997
+    },
+    {
+        "key": 73,
+        "id": 73,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 15816804
+    },
+    {
+        "key": 74,
+        "id": 74,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 75359909
+    },
+    {
+        "key": 75,
+        "id": 75,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 73805211
+    },
+    {
+        "key": 76,
+        "id": 76,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 58522469
+    },
+    {
+        "key": 77,
+        "id": 77,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 35682353
+    },
+    {
+        "key": 78,
+        "id": 78,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 3422847
+    },
+    {
+        "key": 79,
+        "id": 79,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 34078982
+    },
+    {
+        "key": 80,
+        "id": 80,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 32359555
+    },
+    {
+        "key": 81,
+        "id": 81,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 70072090
+    },
+    {
+        "key": 82,
+        "id": 82,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 59675319
+    },
+    {
+        "key": 83,
+        "id": 83,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 14478719
+    },
+    {
+        "key": 84,
+        "id": 84,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 34834717
+    },
+    {
+        "key": 85,
+        "id": 85,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 84920979
+    },
+    {
+        "key": 86,
+        "id": 86,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 39927070
+    },
+    {
+        "key": 87,
+        "id": 87,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 12441612
+    },
+    {
+        "key": 88,
+        "id": 88,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 85420111
+    },
+    {
+        "key": 89,
+        "id": 89,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 4103197
+    },
+    {
+        "key": 90,
+        "id": 90,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 20762090
+    },
+    {
+        "key": 91,
+        "id": 91,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 9227499
+    },
+    {
+        "key": 92,
+        "id": 92,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 46592512
+    },
+    {
+        "key": 93,
+        "id": 93,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 10324879
+    },
+    {
+        "key": 94,
+        "id": 94,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 44496427
+    },
+    {
+        "key": 95,
+        "id": 95,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 3540024
+    },
+    {
+        "key": 96,
+        "id": 96,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 50474052
+    },
+    {
+        "key": 97,
+        "id": 97,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 61244687
+    },
+    {
+        "key": 98,
+        "id": 98,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 31569739
+    },
+    {
+        "key": 99,
+        "id": 99,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 28136710
+    },
+    {
+        "key": 100,
+        "id": 100,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 23407414
+    },
+    {
+        "key": 101,
+        "id": 101,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 19781591
+    },
+    {
+        "key": 102,
+        "id": 102,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 97231530
+    },
+    {
+        "key": 103,
+        "id": 103,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 31062813
+    },
+    {
+        "key": 104,
+        "id": 104,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 23297907
+    },
+    {
+        "key": 105,
+        "id": 105,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 51144177
+    },
+    {
+        "key": 106,
+        "id": 106,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 64480938
+    },
+    {
+        "key": 107,
+        "id": 107,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 49603634
+    },
+    {
+        "key": 108,
+        "id": 108,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 60715956
+    },
+    {
+        "key": 109,
+        "id": 109,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 86891470
+    },
+    {
+        "key": 110,
+        "id": 110,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 88340465
+    },
+    {
+        "key": 111,
+        "id": 111,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 92568010
+    },
+    {
+        "key": 112,
+        "id": 112,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 73210061
+    },
+    {
+        "key": 113,
+        "id": 113,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 97850381
+    },
+    {
+        "key": 114,
+        "id": 114,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 92339314
+    },
+    {
+        "key": 115,
+        "id": 115,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 42109048
+    },
+    {
+        "key": 116,
+        "id": 116,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 11289162
+    },
+    {
+        "key": 117,
+        "id": 117,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 91777437
+    },
+    {
+        "key": 118,
+        "id": 118,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 53800439
+    },
+    {
+        "key": 119,
+        "id": 119,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 69474820
+    },
+    {
+        "key": 120,
+        "id": 120,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 86728725
+    },
+    {
+        "key": 121,
+        "id": 121,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 45476071
+    },
+    {
+        "key": 122,
+        "id": 122,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 91622122
+    },
+    {
+        "key": 123,
+        "id": 123,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 11752220
+    },
+    {
+        "key": 124,
+        "id": 124,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 50140213
+    },
+    {
+        "key": 125,
+        "id": 125,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 8873181
+    },
+    {
+        "key": 126,
+        "id": 126,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 36649561
+    },
+    {
+        "key": 127,
+        "id": 127,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 80199225
+    },
+    {
+        "key": 128,
+        "id": 128,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 83488504
+    },
+    {
+        "key": 129,
+        "id": 129,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 33875748
+    },
+    {
+        "key": 130,
+        "id": 130,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 41244739
+    },
+    {
+        "key": 131,
+        "id": 131,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 77993712
+    },
+    {
+        "key": 132,
+        "id": 132,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 3875353
+    },
+    {
+        "key": 133,
+        "id": 133,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 21068667
+    },
+    {
+        "key": 134,
+        "id": 134,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 99850632
+    },
+    {
+        "key": 135,
+        "id": 135,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 5726520
+    },
+    {
+        "key": 136,
+        "id": 136,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 1772453
+    },
+    {
+        "key": 137,
+        "id": 137,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 91476241
+    },
+    {
+        "key": 138,
+        "id": 138,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 30422155
+    },
+    {
+        "key": 139,
+        "id": 139,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 24193942
+    },
+    {
+        "key": 140,
+        "id": 140,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 89552479
+    },
+    {
+        "key": 141,
+        "id": 141,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 27015723
+    },
+    {
+        "key": 142,
+        "id": 142,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 1656117
+    },
+    {
+        "key": 143,
+        "id": 143,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 20483372
+    },
+    {
+        "key": 144,
+        "id": 144,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 60777593
+    },
+    {
+        "key": 145,
+        "id": 145,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 77472436
+    },
+    {
+        "key": 146,
+        "id": 146,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 17767467
+    },
+    {
+        "key": 147,
+        "id": 147,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 48603575
+    },
+    {
+        "key": 148,
+        "id": 148,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 19185066
+    },
+    {
+        "key": 149,
+        "id": 149,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 74044237
+    },
+    {
+        "key": 150,
+        "id": 150,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 17146388
+    },
+    {
+        "key": 151,
+        "id": 151,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 93344287
+    },
+    {
+        "key": 152,
+        "id": 152,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 39028015
+    },
+    {
+        "key": 153,
+        "id": 153,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 27348527
+    },
+    {
+        "key": 154,
+        "id": 154,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 10762804
+    },
+    {
+        "key": 155,
+        "id": 155,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 40832558
+    },
+    {
+        "key": 156,
+        "id": 156,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 45607395
+    },
+    {
+        "key": 157,
+        "id": 157,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 69355664
+    },
+    {
+        "key": 158,
+        "id": 158,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 6650337
+    },
+    {
+        "key": 159,
+        "id": 159,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 96450368
+    },
+    {
+        "key": 160,
+        "id": 160,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 20737207
+    },
+    {
+        "key": 161,
+        "id": 161,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 28750285
+    },
+    {
+        "key": 162,
+        "id": 162,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 35086813
+    },
+    {
+        "key": 163,
+        "id": 163,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 3187686
+    },
+    {
+        "key": 164,
+        "id": 164,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 85122805
+    },
+    {
+        "key": 165,
+        "id": 165,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 20029590
+    },
+    {
+        "key": 166,
+        "id": 166,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 83785976
+    },
+    {
+        "key": 167,
+        "id": 167,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 89717486
+    },
+    {
+        "key": 168,
+        "id": 168,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 39967219
+    },
+    {
+        "key": 169,
+        "id": 169,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 17011242
+    },
+    {
+        "key": 170,
+        "id": 170,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 8292050
+    },
+    {
+        "key": 171,
+        "id": 171,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 19529878
+    },
+    {
+        "key": 172,
+        "id": 172,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 47994656
+    },
+    {
+        "key": 173,
+        "id": 173,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 83067790
+    },
+    {
+        "key": 174,
+        "id": 174,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 52281032
+    },
+    {
+        "key": 175,
+        "id": 175,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 99167410
+    },
+    {
+        "key": 176,
+        "id": 176,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 11786772
+    },
+    {
+        "key": 177,
+        "id": 177,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 75665356
+    },
+    {
+        "key": 178,
+        "id": 178,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 55079719
+    },
+    {
+        "key": 179,
+        "id": 179,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 86968351
+    },
+    {
+        "key": 180,
+        "id": 180,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 96131553
+    },
+    {
+        "key": 181,
+        "id": 181,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 61587631
+    },
+    {
+        "key": 182,
+        "id": 182,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 1011041
+    },
+    {
+        "key": 183,
+        "id": 183,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 22841791
+    },
+    {
+        "key": 184,
+        "id": 184,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 92123226
+    },
+    {
+        "key": 185,
+        "id": 185,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 25716251
+    },
+    {
+        "key": 186,
+        "id": 186,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 67120563
+    },
+    {
+        "key": 187,
+        "id": 187,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 84242223
+    },
+    {
+        "key": 188,
+        "id": 188,
+        "status": false,
+        "departments": [
+            {
+                "id": 5,
+                "department": "Fazaa"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 91595142
+    },
+    {
+        "key": 189,
+        "id": 189,
+        "status": false,
+        "departments": [
+            {
+                "id": 3,
+                "department": "Traffic Police"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 63546035
+    },
+    {
+        "key": 190,
+        "id": 190,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 7108662
+    },
+    {
+        "key": 191,
+        "id": 191,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 70172096
+    },
+    {
+        "key": 192,
+        "id": 192,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 94361309
+    },
+    {
+        "key": 193,
+        "id": 193,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 84811848
+    },
+    {
+        "key": 194,
+        "id": 194,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 45404023
+    },
+    {
+        "key": 195,
+        "id": 195,
+        "status": false,
+        "departments": [
+            {
+                "id": 1,
+                "department": "System Admins"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 62478178
+    },
+    {
+        "key": 196,
+        "id": 196,
+        "status": false,
+        "departments": [
+            {
+                "id": 2,
+                "department": "EMS"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 61512165
+    },
+    {
+        "key": 197,
+        "id": 197,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 23358224
+    },
+    {
+        "key": 198,
+        "id": 198,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 95873829
+    },
+    {
+        "key": 199,
+        "id": 199,
+        "status": false,
+        "departments": [
+            {
+                "id": 6,
+                "department": "Central Operations"
+            }
+        ],
+        "groups": [
+            {
+                "id": 1,
+                "group": "Technical Affairs"
+            }
+        ],
+        "CFSResponderId": 62505007
+    },
+    {
+        "key": 200,
+        "id": 200,
+        "status": false,
+        "departments": [
+            {
+                "id": 4,
+                "department": "Civil Defense"
+            }
+        ],
+        "groups": [
+            {
+                "id": 2,
+                "group": "Other"
+            }
+        ],
+        "CFSResponderId": 13088944
     }
 ]

@@ -11,7 +11,7 @@ export interface TableDataProps {
   id: number;
   CFSResponderId: number;
   status: boolean;
-  departments: [string];
+  departments: string[];
 }
 
 // Table Columns Type
@@ -20,15 +20,9 @@ export interface TableColumnProps {
   title: string;
   dataIndex: string;
   key: string;
-  id: number;
-  CFSResponderId: number;
-  status: boolean;
-  departments: [string];
-  render?: (
-    text: unknown | string,
-    record: object,
-    index: number,
-  ) => JSX.Element | void;
+  filterDropdown?: () => JSX.Element;
+  filterIcon?: () => JSX.Element;
+  onFilter?: () => boolean;
 }
 
 // Datasource Prop Destructured
